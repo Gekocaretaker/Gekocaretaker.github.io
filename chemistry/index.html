@@ -3,10 +3,6 @@
 <head>
 <title>Chemistry Mix</title>
 <style type="text/css">
-embed {
-  border: 1px solid #000000;
-}
-
 .gGrid {
   display: grid;
   grid-template-rows: auto;
@@ -81,7 +77,7 @@ embed {
     <div id="greekSelect1" style="width:52px; height:52px;">
         <img src="images/blank.png" style="width:52px; height:52px;" />
     </div>
-    <embed type="text/html" id="gElements1" src="html/gElements1.html" width="300px" height="300px" style="display:none;">
+    <iframe src="html/gElements1.html" id="gElements1" width="300px" height="300px" style="display:none;"></iframe>
   </div>
   <input type="text" style="display:none;" id="greekText1" disabled />
   <div id="greek2" style="display:none;">
@@ -125,6 +121,8 @@ var aEleOp2 = false;
 window.onload = function() {
 
 }
+var iGData1 = $("gElements1").contentWindow.document;
+console.log(iGData1.querySelectorAll("div#gEle1 div#1gre1 img").src);
 </script>
 </body>
 </html>
