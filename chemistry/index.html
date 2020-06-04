@@ -119,8 +119,13 @@ var gEleOp2 = false;
 var aEleOp1 = false;
 var aEleOp2 = false;
 window.onload = function() {
-
+alert("Please look at lines 125-127");
 }
+/*
+This is supposed to be a test to get data from the <iframe> with an id of gElements1 and then get a image in the iframe and log the source of the image.
+This is only temporary until this works. Once it does I am going to add a feature that will let them click the image and then it will change
+<div id="greekSelect1"> to that image.
+*/
 var iGData1 = $("gElements1").contentWindow.document;
 iGData1 = iGData1.querySelectorAll("#gre1t1 img").src;
 console.log(iGData1);
