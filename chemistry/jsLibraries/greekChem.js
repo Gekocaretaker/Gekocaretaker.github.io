@@ -30,14 +30,38 @@ $("greekOC").onclick = function() {
   }
 };
 
-//Mix Elements
-$("mixGreek").onclick = function() {
-  var mainGreek1 = document.querySelector("#greek1 div.selected-box div.selected-icon img");
-  var mainGreek2 = document.querySelector("#greek2 div.selected-box div.selected-icon img");
-  if((mainGreek1.src.includes(greekElements[0]) && mainGreek2.src.includes(greekElements[1])) || (mainGreek1.src.includes(greekElements[1]) && mainGreek2.src.includes(greekElements[0]))) {
-    $("5gre1").style.visibility = "visible";
-    $("5gre2").style.visibility = "visible";
-    greekEarned = greekEarned + 1;
-    alert("You have discovered Steam!");
+$("greekSelect1").onclick = function() {
+  var greekClick1 = Array.from($("greek1").children);
+  var greekCL1 = greekClick1.length;
+  var gI1;
+  if(gEleOp1 == false) {
+    for(gI1 = 1; gI1 < greekCL1; gI1++) {
+      greekClick1[gI1].style.display = "block";
+    }
+    gEleOp1 = true;
+  } else if(gEleOp1 == true) {
+    for(gI1 = 1; gI1 < greekCL1; gI1++) {
+      greekClick1[gI1].style.display = "none";
+    }
+    gEleOp1 = false;
   }
 }
+
+$("greekSelect2").onclick = function() {
+  var greekClick2 = Array.from($("greek2").children);
+  var greekCL2 = greekClick2.length;
+  var gI2;
+  if(gEleOp2 == false) {
+    for(gI2 = 1; gI2 < greekCL2; gI2++) {
+      greekClick2[gI2].style.display = "block";
+    }
+    gEleOp2 = true;
+  } else if(gEleOp2 == true) {
+    for(gI2 = 1; gI2 < greekCL2; gI2++) {
+      greekClick2[gI2].style.display = "none";
+    }
+    gEleOp2 = false;
+  }
+}
+
+//Mix Elements

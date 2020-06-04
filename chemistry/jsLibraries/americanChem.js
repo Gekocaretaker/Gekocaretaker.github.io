@@ -23,11 +23,3 @@ $("americanOC").onclick = function() {
 }
 
 //Mix Elements
-$("mixAmerican").onclick = function() {
-  var mainAmerican1 = document.querySelector("#american1 div.selected-box div.selected-icon img");
-  var mainAmerican2 = document.querySelector("#american2 div.selected-box div.selected-icon img");
-  if((mainAmerican1.src.includes(americanElements[0]) && mainAmerican2.src.includes(americanElements[0])) || (mainAmerican1.src.includes(americanElements[0]) && mainAmerican2.src.includes(americanElements[0]))) {
-    //americanEarned = americanEarned + 1;
-    alert("This is still in developement!");
-  }
-}

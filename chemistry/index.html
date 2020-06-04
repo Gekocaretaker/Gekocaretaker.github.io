@@ -2,40 +2,58 @@
 <html>
 <head>
 <title>Chemistry Mix</title>
-<link rel="stylesheet" href="iconselect.css"></link>
 <style type="text/css">
-  #greek1, #greek2 {
-    float: left;
-    margin-right: 300px;
-  }
-  #greekText1, #greekText2 {
-    float: left;
-    margin-right: 50px;
-  }
-
-  #american1, #american2 {
-    float: left;
-    margin-right: 300px;
-  }
-  #americanText1, #americanText2 {
-    float: left;
-    margin-right: 50px;
-  }
-
-  input[type="text"]:disabled {
-    background-color: #FFFFFF;
-    border: none;
-    width: 250px;
-  }
+.gGrid1 {
+  display: grid;
+  grid-template-rows: auto;
+  row-gap: 100px;
+  grid-template-columns: auto;
+}
+#greek1 {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+#greekText1 {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  width: 175px;
+  height: 52px;
+}
+#mixGreek {
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
+  width: 100px;
+  height: 50px;
+}
+#greek2 {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+#greekText2 {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  width: 175px;
+  height: 52px;
+}
 </style>
 </head>
 <body>
   <button id="greekOC">Open/Close Greek</button><br />
-<div id="greek1" style="display:none;"></div>
-<div id="greek2" style="display:none;"></div>
-<button id="mixGreek" style="display:none;">Mix Elements</button><br /><br />
-<input type="text" style="display:none;" id="greekText1" disabled />
-<input type="text" style="display:none;" id="greekText2" disabled />
+<div class="gGrid1">
+  <div id="greek1" style="display:none;">
+    <div id="greekSelect1" style="width:52px; height:52px;">
+        <img src="images/blank.png" style="width:52px; height:52px;" />
+    </div>
+  </div>
+  <input type="text" style="display:none;" id="greekText1" disabled />
+  <div id="greek2" style="display:none;">
+    <div id="greekSelect2" style="width:52px; height:52px;">
+      <img src="images/blank.png" style="width:52px; height:52px;" />
+    </div>
+  </div>
+  <input type="text" style="display:none;" id="greekText2" disabled />
+  <button id="mixGreek" style="display:none;">Mix Elements</button>
+</div>
   <br /><br /><br /><br /><br /><br />
   <button id="americanOC">Open/Close American</button><br />
 <div id="american1" style="display:none;"></div>
@@ -43,176 +61,29 @@
 <button id="mixAmerican" style="display:none;">Mix Elements</button><br /><br />
 <input type="text" style="display:none;" id="americanText1" disabled />
 <input type="text" style="display:none;" id="americanText2" disabled />
-<script src="jsLibraries/iconselect.js"></script>
-<script src="jsLibraries/iscroll.js"></script>
 <script src="jsLibraries/greekChem.js"></script>
 <script src="jsLibraries/americanChem.js"></script>
 <script src="jsLibraries/otherFunc.js"></script>
 <script>
-
 var greekOpen = false;
 var americanOpen = false;
-var greekIcons1;
-var greekIcons2;
-var americanIcons1;
-var americanIcons2;
-var gi;
+var gEleOp1 = false;
+var gEleOp2 = false;
 window.onload = function() {
-  $("greek1").addEventListener('changed', function(e) {
-    var gTest1 = greekIcons1.getSelectedValue();
-    if(gTest1 == 1) {
-      $("greekText1").value = "Blank - This is useless.";
-    } else {
-      $("greekText1").value = greekElements[(gTest1 - 2)] + " - " + gEPhrase[(gTest1 - 2)];
-    }
-  });
-  greekIcons1 = new IconSelect("greek1", {'vectoralIconNumber':4});
-  var gIcons1 = [];
-  gIcons1.push({'iconFilePath':'images/blank.png', 'iconValue':'1'});
-  gIcons1.push({'iconFilePath':'images/greek/fire.png', 'iconValue':'2'});
-  gIcons1.push({'iconFilePath':'images/greek/water.png', 'iconValue':'3'});
-  gIcons1.push({'iconFilePath':'images/greek/earth.png', 'iconValue':'4'});
-  gIcons1.push({'iconFilePath':'images/greek/air.png', 'iconValue':'5'});
-  gIcons1.push({'iconFilePath': 'images/greek/steam.png', 'iconValue':'6'});
-  greekIcons1.refresh(gIcons1);
+  createEle("greek1", "1gre1", "images/blank.png");
+  createEle("greek1", "1gre2", "images/greek/fire.png");
+  createEle("greek1", "1gre3", "images/greek/water.png");
+  createBre("greek1", "bre1");
+  createEle("greek1", "1gre4", "images/greek/earth.png");
+  createEle("greek1", "1gre5", "images/greek/air.png");
 
-  $("greek2").addEventListener('changed', function(e) {
-    var gTest2 = greekIcons2.getSelectedValue();
-    if(gTest2 == 1) {
-      $("greekText2").value = "Blank - This is useless.";
-    } else {
-      $("greekText2").value = greekElements[(gTest2 - 2)] + " - " + gEPhrase[(gTest2 - 2)];
-    }
-  });
-  greekIcons2 = new IconSelect("greek2", {'vectoralIconNumber':4});
-  var gIcons2 = [];
-  gIcons2.push({'iconFilePath':'images/blank.png', 'iconValue':'1'});
-  gIcons2.push({'iconFilePath':'images/greek/fire.png', 'iconValue':'2'});
-  gIcons2.push({'iconFilePath':'images/greek/water.png', 'iconValue':'3'});
-  gIcons2.push({'iconFilePath':'images/greek/earth.png', 'iconValue':'4'});
-  gIcons2.push({'iconFilePath':'images/greek/air.png', 'iconValue':'5'});
-  gIcons2.push({'iconFilePath':'images/greek/steam.png', 'iconValue':'6'});
-  greekIcons2.refresh(gIcons2);
-
-  $("american1").addEventListener('changed', function(e) {
-    var aTest1 = americanIcons1.getSelectedValue();
-    if(aTest1 == 1) {
-      $("americanText1").value = "Blank - This is useless.";
-    } else {
-      $("americanText1").value = americanElements[(aTest1 - 2)] + " - "/* + aEPhrase[(aTest1 - 2)]*/;
-    }
-  });
-  americanIcons1 = new IconSelect("american1", {'vectoralIconNumber':4});
-  var aIcons1 = [];
-  aIcons1.push({'iconFilePath':'images/blank.png', 'iconValue':'1'});
-  aIcons1.push({'iconFilePath':'images/american/hydrogen.png', 'iconValue':'2'});
-  aIcons1.push({'iconFilePath':'images/american/helium.png', 'iconValue':'3'});
-  aIcons1.push({'iconFilePath':'images/american/lithium.png', 'iconValue':'4'});
-  aIcons1.push({'iconFilePath':'images/american/beryllium.png', 'iconValue':'5'});
-  aIcons1.push({'iconFilePath':'images/american/boron.png', 'iconValue':'6'});
-  aIcons1.push({'iconFilePath':'images/american/carbon.png', 'iconValue':'7'});
-  aIcons1.push({'iconFilePath':'images/american/nitrogen.png', 'iconValue':'8'});
-  aIcons1.push({'iconFilePath':'images/american/oxygen.png', 'iconValue':'9'});
-  aIcons1.push({'iconFilePath':'images/american/fluorine.png', 'iconValue':'10'});
-  aIcons1.push({'iconFilePath':'images/american/neon.png', 'iconValue':'11'});
-  aIcons1.push({'iconFilePath':'images/american/sodium.png', 'iconValue':'12'});
-  aIcons1.push({'iconFilePath':'images/american/magnesium.png', 'iconValue':'13'});
-  aIcons1.push({'iconFilePath':'images/american/aluminium.png', 'iconValue':'14'});
-  aIcons1.push({'iconFilePath':'images/american/silocon.png', 'iconValue':'15'});
-  aIcons1.push({'iconFilePath':'images/american/phosphorus.png', 'iconValue':'16'});
-  aIcons1.push({'iconFilePath':'images/american/sulfur.png', 'iconValue':'17'});
-  aIcons1.push({'iconFilePath':'images/american/chlorine.png', 'iconValue':'18'});
-  aIcons1.push({'iconFilePath':'images/american/argon.png', 'iconValue':'19'});
-  americanIcons1.refresh(aIcons1);
-
-  $("american2").addEventListener('changed', function(e) {
-    var aTest2 = americanIcons2.getSelectedValue();
-    if(aTest2 == 1) {
-      $("americanText2").value = "Blank - This is useless.";
-    } else {
-      $("americanText2").value = americanElements[(aTest2 - 2)] + " - "/* + aEPhrase[(aTest2 - 2)]*/;
-    }
-  });
-  americanIcons2 = new IconSelect("american2", {'vectoralIconNumber':4});
-  var aIcons2 = [];
-  aIcons2.push({'iconFilePath':'images/blank.png', 'iconValue':'1'});
-  aIcons2.push({'iconFilePath':'images/american/hydrogen.png', 'iconValue':'2'});
-  aIcons2.push({'iconFilePath':'images/american/helium.png', 'iconValue':'3'});
-  aIcons2.push({'iconFilePath':'images/american/lithium.png', 'iconValue':'4'});
-  aIcons2.push({'iconFilePath':'images/american/beryllium.png', 'iconValue':'5'});
-  aIcons2.push({'iconFilePath':'images/american/boron.png', 'iconValue':'6'});
-  aIcons2.push({'iconFilePath':'images/american/carbon.png', 'iconValue':'7'});
-  aIcons2.push({'iconFilePath':'images/american/nitrogen.png', 'iconValue':'8'});
-  aIcons2.push({'iconFilePath':'images/american/oxygen.png', 'iconValue':'9'});
-  aIcons2.push({'iconFilePath':'images/american/fluorine.png', 'iconValue':'10'});
-  aIcons2.push({'iconFilePath':'images/american/neon.png', 'iconValue':'11'});
-  aIcons2.push({'iconFilePath':'images/american/sodium.png', 'iconValue':'12'});
-  aIcons2.push({'iconFilePath':'images/american/magnesium.png', 'iconValue':'13'});
-  aIcons2.push({'iconFilePath':'images/american/aluminium.png', 'iconValue':'14'});
-  aIcons2.push({'iconFilePath':'images/american/silocon.png', 'iconValue':'15'});
-  aIcons2.push({'iconFilePath':'images/american/phosphorus.png', 'iconValue':'16'});
-  aIcons2.push({'iconFilePath':'images/american/sulfur.png', 'iconValue':'17'});
-  aIcons2.push({'iconFilePath':'images/american/chlorine.png', 'iconValue':'18'});
-  aIcons2.push({'iconFilePath':'images/american/argon.png', 'iconValue':'19'});
-  americanIcons2.refresh(aIcons2);
-
-  var gHidElem1 = document.querySelector("#greek1 div.selected-box div.box div");
-  gHidElem1 = Array.from(gHidElem1.children);
-  function gHidElmF1(item, index, arr) {
-    arr[index] = item;
-  }
-  gHidElem1.forEach(gHidElmF1);
-  for(gi = 5; gi < gHidElem1.length; gi++) {
-    gHidElem1[gi].style.visibility = "hidden";
-    gHidElem1[gi].setAttribute("id", gi + "gre1");
-  }
-
-  var gHidElem2 = document.querySelector("#greek2 div.selected-box div.box div");
-  gHidElem2 = Array.from(gHidElem2.children);
-  function gHidElmF2(item, index, arr) {
-    arr[index] = item;
-  }
-  gHidElem2.forEach(gHidElmF2);
-  for(gi = 5; gi < gHidElem2.length; gi++) {
-    gHidElem2[gi].style.visibility = "hidden";
-    gHidElem2[gi].setAttribute("id", gi + "gre2");
-  }
-
-  var aHidElem1 = document.querySelector("#american1 div.selected-box div.box div");
-  aHidElem1 = Array.from(aHidElem1.children);
-  function aHidElmF1(item, index, arr) {
-    arr[index] = item;
-  }
-  aHidElem1.forEach(aHidElmF1);
-  for(gi = 1; gi < aHidElem1.length; gi++) {
-    aHidElem1[gi].style.visibility = "hidden";
-    aHidElem1[gi].setAttribute("id", gi + "ame1");
-  }
-
-  var aHidElem2 = document.querySelector("#american2 div.selected-box div.box div");
-  aHidElem2 = Array.from(aHidElem2.children);
-  function aHidElmF2(item, index, arr) {
-    arr[index] = item;
-  }
-  aHidElem2.forEach(aHidElmF2);
-  for(gi = 1; gi < aHidElem2.length; gi++) {
-    aHidElem2[gi].style.visibility = "hidden";
-    aHidElem2[gi].setAttribute("id", gi + "ame2");
-  }
+  createEle("greek2", "2gre1", "images/blank.png");
+  createEle("greek2", "2gre2", "images/greek/fire.png");
+  createEle("greek2", "2gre3", "images/greek/water.png");
+  createBre("greek2", "bre2");
+  createEle("greek2", "2gre4", "images/greek/earth.png");
+  createEle("greek2", "2gre5", "images/greek/air.png");
 }
-
-setInterval(function() {
-  if(greekEarned == 5 && hydrogenDis == false) {
-    //Hydrogen is temporary until first discovered element is created in code.
-    $("1ame1").style.visibility = "visible";
-    $("1ame2").style.visibility = "visible";
-    americanEarned = americanEarned + 1;
-    setTimeout(() => {alert("You have discovered Hydrogen!");}, 2000);
-    hydrogenDis = true;
-  }
-}, 1000);
-
-
 </script>
 </body>
 </html>
