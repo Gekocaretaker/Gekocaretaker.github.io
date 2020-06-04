@@ -32,7 +32,6 @@ function createEle(location, ident, imige) {
   createImg.style.height = "28px";
   $(ident).appendChild(createImg);
   $(ident).style.float = "left";
-  $(ident).style.display = "none";
 }
 function createBre(location, ident) {
   var createBreak = document.createElement("br");

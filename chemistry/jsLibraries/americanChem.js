@@ -22,4 +22,24 @@ $("americanOC").onclick = function() {
   }
 }
 
+$("americanSelect1").onclick = function() {
+  if(aEleOp1 == false) {
+    $("aElements1").style.display = "block";
+    aEleOp1 = true;
+  } else if(aEleOp1 == true) {
+    $("aElements1").style.display = "none";
+    aEleOp1 = false;
+  }
+}
+
+$("americanSelect2").onclick = function() {
+  if(aEleOp2 == false) {
+    $("aElements2").style.display = "block";
+    aEleOp2 = true;
+  } else if(aEleOp2 == true) {
+    $("aElements2").style.display = "none";
+    aEleOp2 = false;
+  }
+}
+
 //Mix Elements
