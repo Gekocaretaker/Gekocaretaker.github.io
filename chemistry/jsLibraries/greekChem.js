@@ -9,12 +9,9 @@ var $cl = function(className) {
 
 //Greek startup
 var greekEarned = 4;
-var greekElements = ["fire", "water", "earth", "air", "steam"];
-var gEPhrase = ["The core to all things hot.", "It can be both kind and cruel.", "A force to be reckoned with.", "Kindness on a warm day.", "Not liquid, not gas."];
-
-//American Loop Stoppers
-var hydrogenDis = false;
-
+var greekElements = ["Blank", "fire", "water", "earth", "air", "steam"];
+var gEPhrase = ["It is useless.", "The core to all things hot.", "It can be both kind and cruel.", "A force to be reckoned with.", "Kindness on a warm day.", "Not liquid, not gas."];
+var steamEarned = false;
 //Open/Close
 $id("greekOC").onclick = function() {
   if(greekOpen == false) {
@@ -55,3 +52,13 @@ $id("greekSelect2").onclick = function() {
 }
 
 //Mix Elements
+$id("mixGreek").onclick = function() {
+  if(($id("greekSelect1").getAttribute("element-value") == 1 && $id("greekSelect2").getAttribute("element-value") == 2 && steamEarned == false) || ($id("greekSelect1").getAttribute("element-value") == 2 && $id("greekSelect2").getAttribute("element-value") == 1 && steamEarned == false)) {
+    $id("unlockMP3").play();
+    alert("You unlocked Steam!");
+    $id("gre1t6").style.display = "block";
+    $id("gre2t6").style.display = "block";
+    greekEarned++;
+    steamEarned = true;
+  }
+}

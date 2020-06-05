@@ -1,7 +1,10 @@
 //American startup
-var americanElements = ["hydrogen", "helium", "lithium", "beryllium", "boron", "carbon", "nitrogen", "oxygen", "fluorine", "neon", "sodium", "magnesium", "aluminium", "silocon", "phosphorus", "sulfur", "chlorine", "argon"];
-//var aEPhrase = ["The first element on the table", "The lightest; Can't become solid", "Used to make batteries."];
+var americanElements = ["Blank", "hydrogen", "helium", "lithium", "beryllium", "boron", "carbon", "nitrogen", "oxygen", "fluorine", "neon", "sodium", "magnesium", "aluminium", "silocon", "phosphorus", "sulfur", "chlorine", "argon"];
+var aEPhrase = ["It is useless.", "The first element on the table", "The lightest; Can't become solid", "Used to make batteries."];
 var americanEarned = 0;
+
+//American Loop Stoppers
+var hydrogenEarned = false;
 
 //Open/Close
 $id("americanOC").onclick = function() {
@@ -43,3 +46,8 @@ $id("americanSelect2").onclick = function() {
 }
 
 //Mix Elements
+$id("mixAmerican").onclick = function() {
+  if(0 == 0) {
+    alert("This is still is in beta! Please try later.");
+  }
+}
