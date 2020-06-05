@@ -1,7 +1,11 @@
 //All startup
-var $ = function(id) {
+var $id = function(id) {
   return document.getElementById(id);
 };
+
+var $cl = function(className) {
+  return document.getElementsByClassName(className);
+}
 
 //Greek startup
 var greekEarned = 4;
@@ -12,40 +16,40 @@ var gEPhrase = ["The core to all things hot.", "It can be both kind and cruel.",
 var hydrogenDis = false;
 
 //Open/Close
-$("greekOC").onclick = function() {
+$id("greekOC").onclick = function() {
   if(greekOpen == false) {
-    $("greek1").style.display = "block";
-    $("greek2").style.display = "block";
-    $("mixGreek").style.display = "block";
-    $("greekText1").style.display = "block";
-    $("greekText2").style.display = "block";
+    $id("greek1").style.display = "block";
+    $id("greek2").style.display = "block";
+    $id("mixGreek").style.display = "block";
+    $id("greekText1").style.display = "block";
+    $id("greekText2").style.display = "block";
     greekOpen = true;
   } else if(greekOpen == true) {
-    $("greek1").style.display = "none";
-    $("greek2").style.display = "none";
-    $("mixGreek").style.display = "none";
-    $("greekText1").style.display = "none";
-    $("greekText2").style.display = "none";
+    $id("greek1").style.display = "none";
+    $id("greek2").style.display = "none";
+    $id("mixGreek").style.display = "none";
+    $id("greekText1").style.display = "none";
+    $id("greekText2").style.display = "none";
     greekOpen = false;
   }
 };
 
-$("greekSelect1").onclick = function() {
+$id("greekSelect1").onclick = function() {
   if(gEleOp1 == false) {
-    $("gElements1").style.display = "block";
+    $id("gElements1").style.display = "block";
     gEleOp1 = true;
   } else if(gEleOp1 == true) {
-    $("gElements1").style.display = "none";
+    $id("gElements1").style.display = "none";
     gEleOp1 = false;
   }
 }
 
-$("greekSelect2").onclick = function() {
+$id("greekSelect2").onclick = function() {
   if(gEleOp2 == false) {
-    $("gElements2").style.display = "block";
+    $id("gElements2").style.display = "block";
     gEleOp2 = true;
   } else if(gEleOp2 == true) {
-    $("gElements2").style.display = "none";
+    $id("gElements2").style.display = "none";
     gEleOp2 = false;
   }
 }
