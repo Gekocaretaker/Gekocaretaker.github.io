@@ -1,7 +1,18 @@
 //Debugging functions
 function allGive(pass) {
   if(pass == "admin") {
-
+    var pass1 =  $id("aElements1").getElementsByTagName('div');
+    var pass2 = $id("aElements2").getElementsByTagName('div');
+    for(i = 0; i < pass1.length; i++) {
+      pass1[i].style.display = "block";
+      pass2[i].style.display = "block";
+    }
+    var pass3 = $id("gElements1").getElementsByTagName('div');
+    var pass4 = $id("gElements2").getElementsByTagName('div');
+    for(i = 0; i < pass3.length; i++) {
+      pass3[i].style.display = "block";
+      pass4[i].style.display = "block";
+    }
   } else {
     alert("You are not allowed!");
   }
@@ -9,7 +20,7 @@ function allGive(pass) {
 
 function oneGive(ele, pass) {
   if(pass == "admin") {
-    $id(ele).style.display = "none";
+    $id(ele).style.display = "block";
   } else {
     alert("Cheater!");
   }
@@ -53,9 +64,8 @@ function createEle(location, ident, boxSpot, imige, elemValue, elemType) {
     $id(ident).style.display = "none";
   }
 }
-function createBre(location, ident) {
+function createBre(location) {
   var createBreak = document.createElement("br");
-  createBreak.id = ident;
   createBreak.style.clear = "both";
   $id(location).appendChild(createBreak);
 }

@@ -1,10 +1,13 @@
 //American startup
-var americanElements = ["Blank", "hydrogen", "helium", "lithium", "beryllium", "boron", "carbon", "nitrogen", "oxygen", "fluorine", "neon", "sodium", "magnesium", "aluminium", "silocon", "phosphorus", "sulfur", "chlorine", "argon"];
+var americanElements = ['Blank', 'hydrogen', 'helium', 'lithium', 'beryllium', 'boron', 'carbon', 'nitrogen', 'oxygen', 'fluorine',
+  'neon', 'sodium', 'magnesium', 'aluminium', 'silocon', 'phosphorus', 'sulfur', 'chlorine', 'argon', 'potassium', 'calcium', 'scandium',
+  'titanium', 'vanadium', 'chromium', 'manganese', 'iron', 'cobalt', 'nickel', 'copper', 'zinc', 'gallium', 'germanium', 'arsenic',
+  'selenium', 'bromine', 'krypton'];
 var aEPhrase = ["It is useless.", "The first element on the table", "The lightest; Can't become solid", "Used to make batteries."];
 var americanEarned = 0;
 
 //American Loop Stoppers
-var hydrogenEarned = false;
+var hydrogenEarned, copperEarned = false;
 
 //Open/Close
 $id("americanOC").onclick = function() {
