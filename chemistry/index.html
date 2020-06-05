@@ -68,6 +68,14 @@
   width: 175px;
   height: 52px;
 }
+
+#gElements1, #gElements2, #aElements1, #aElements2 {
+  width: 140px;
+  height: 140px;
+  overflow: auto;
+  border: 5px solid #aaaaaa;
+  border-radius: 10px;
+}
 </style>
 </head>
 <body>
@@ -77,14 +85,18 @@
     <div id="greekSelect1" style="width:52px; height:52px;">
         <img src="images/blank.png" style="width:52px; height:52px;" />
     </div>
-    <iframe src="html/gElements1.html" id="gElements1" width="300px" height="300px" style="display:none;"></iframe>
+    <div id="gElements1" style="display:none;">
+
+    </div>
   </div>
   <input type="text" style="display:none;" id="greekText1" disabled />
   <div id="greek2" style="display:none;">
     <div id="greekSelect2" style="width:52px; height:52px;">
       <img src="images/blank.png" style="width:52px; height:52px;" />
     </div>
-    <embed type="text/html" id="gElements2" src="html/gElements2.html" width="300px" height="300px" style="display:none;">
+    <div id="gElements2" style="display:none;">
+
+    </div>
   </div>
   <input type="text" style="display:none;" id="greekText2" disabled />
   <button id="mixGreek" style="display:none;">Mix Elements</button>
@@ -96,14 +108,18 @@
     <div id="americanSelect1" style="width:52px; height:52px;">
       <img src="images/blank.png" style="width:52px; height:52px;" />
     </div>
-    <embed type="text/html" id="aElements1" src="html/aElements1.html" width="300px" height="300px" style="display:none;">
+    <div id="aElements1" style="display:none;">
+
+    </div>
   </div>
   <input type="text" style="display:none;" id="americanText1" disabled />
   <div id="american2" style="display:none;">
     <div id="americanSelect2" style="width:52px; height:52px;">
       <img src="images/blank.png" style="width:52px; height:52px;" />
     </div>
-    <embed type="text/html" id="aElements2" src="html/aElements2.html" width="300px" height="300px" style="display:none;">
+    <div id="aElements2" style="display:none;">
+
+    </div>
   </div>
   <input type="text" style="display:none;" id="americanText2" disabled />
   <button id="mixAmerican" style="display:none;">Mix Elements</button><br /><br />
@@ -119,16 +135,37 @@ var gEleOp2 = false;
 var aEleOp1 = false;
 var aEleOp2 = false;
 window.onload = function() {
-alert("Please look at lines 125-127");
+createEle("gElements1", "gre1t1", 1, "images/blank.png");
+createEle("gElements1", "gre1t2", 1, "images/greek/fire.png");
+createEle("gElements1", "gre1t3", 1, "images/greek/water.png");
+createEle("gElements1", "gre1t4", 1, "images/greek/earth.png");
+createEle("gElements1", "gre1t5", 1, "images/greek/air.png");
+createBre("gElements1", "bre1");
+createEle("gElements1", "gre1t6", 1, "images/greek/steam.png")
+
+createEle("gElements2", "gre2t1", 2, "images/blank.png");
+createEle("gElements2", "gre2t2", 2, "images/greek/fire.png");
+createEle("gElements2", "gre2t3", 2, "images/greek/water.png");
+createEle("gElements2", "gre2t4", 2, "images/greek/earth.png");
+createEle("gElements2", "gre2t5", 2, "images/greek/air.png");
+createBre("gElements2", "bre2");
+createEle("gElements2", "gre2t6", 2, "images/greek/steam.png");
+
+createEle("aElements1", "ame1t1", 3, "images/blank.png");
+createEle("aElements1", "ame1t2", 3, "images/american/hydrogen.png");
+createEle("aElements1", "ame1t3", 3, "images/american/helium.png");
+createEle("aElements1", "ame1t4", 3, "images/american/lithium.png");
+createEle("aElements1", "ame1t5", 3, "images/american/beryllium.png");
+createBre("aElements1", "bre3");
+
+createEle("aElements2", "ame2t1", 4, "images/blank.png");
+createEle("aElements2", "ame2t2", 4, "images/american/hydrogen.png");
+createEle("aElements2", "ame2t3", 4, "images/american/helium.png");
+createEle("aElements2", "ame2t4", 4, "images/american/lithium.png");
+createEle("aElements2", "ame2t5", 4, "images/american/beryllium.png");
+createBre("aElements2", "bre4");
 }
-/*
-This is supposed to be a test to get data from the <iframe> with an id of gElements1 and then get a image in the iframe and log the source of the image.
-This is only temporary until this works. Once it does I am going to add a feature that will let them click the image and then it will change
-<div id="greekSelect1"> to that image.
-*/
-var iGData1 = $("gElements1").contentWindow.document;
-iGData1 = iGData1.querySelectorAll("#gre1t1 img").src;
-console.log(iGData1);
+
 </script>
 </body>
 </html>
