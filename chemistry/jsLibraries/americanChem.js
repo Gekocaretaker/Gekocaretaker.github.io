@@ -51,6 +51,7 @@ $id("americanSelect2").onclick = function() {
 //Mix Elements
 $id("mixAmerican").onclick = function() {
   if(0 == 0) {
+    $id("errorMP3").play();
     alert("This is still is in beta! Please try later.");
   }
 }

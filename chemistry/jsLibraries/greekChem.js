@@ -60,5 +60,8 @@ $id("mixGreek").onclick = function() {
     $id("gre2t6").style.display = "block";
     greekEarned++;
     steamEarned = true;
+  } else {
+    $id("errorMP3").play();
+    alert("This merge is not possible or has not been added!");
   }
 }
