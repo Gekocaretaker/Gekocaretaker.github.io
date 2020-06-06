@@ -31,13 +31,13 @@ function oneTake(ele) {
 }
 
 //Create Elements
-function createEle(location, ident, boxSpot, imige, elemValue, elemType) {
+function createEle(location, ident, boxSpot, imige, elemValue, elemType, idEarn) {
   var createDiv = document.createElement("div");
   createDiv.id = ident;
   createDiv.style.width = "28px";
   createDiv.style.height = "28px";
   createDiv.setAttribute('element-value', elemValue);
-  elemValue++;
+  createDiv.setAttribute('isearned', idEarn);
   $id(location).appendChild(createDiv);
   if(boxSpot == 1) {
     $id(ident).onclick = switchElems1;
@@ -56,9 +56,9 @@ function createEle(location, ident, boxSpot, imige, elemValue, elemType) {
   createImg.style.height = "28px";
   $id(ident).appendChild(createImg);
   $id(ident).style.float = "left";
-  if(elemValue >= 6 && elemType == "greek") {
+  if(elemValue >= 5 && elemType == "greek") {
     $id(ident).style.display = "none";
-  } else if(elemValue < 6 && elemType == "greek") {
+  } else if(elemValue < 5 && elemType == "greek") {
     $id(ident).style.display = "block";
   } else if(elemType == "american") {
     $id(ident).style.display = "none";

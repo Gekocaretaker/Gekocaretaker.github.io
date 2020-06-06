@@ -143,13 +143,15 @@ var aEleOp2 = false;
 var i;
 window.onload = function() {
  createItems();
+ mixGreekEs();
 }
 
 setInterval(function() {
-  if(greekEarned == 5 && copperEarned == false) {
+  if(greekEarned == 5 && $id("ame1t30").getAttribute("isearned") == "false") {
     $id("ame1t30").style.display = "block";
     $id("ame2t30").style.display = "block";
-    copperEarned = true;
+    americanEarned++;
+    $id("ame2t30").setAttribute("isearned", "true");
     setTimeout(function() {
       $id("unlockMP3").play();
       alert("You unlocked Copper!");

@@ -13,9 +13,6 @@ var americanElements = ['Blank', 'hydrogen', 'helium', 'lithium', 'beryllium', '
 var aEPhrase = ["It is useless.", "The first element on the table", "The lightest; Can't become solid", "Used to make batteries."];
 var americanEarned = 0;
 
-//American Loop Stoppers
-var hydrogenEarned, copperEarned = false;
-
 //Open/Close
 $id("americanOC").onclick = function() {
   if(americanOpen == false) {

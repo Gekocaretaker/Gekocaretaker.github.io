@@ -11,7 +11,6 @@ var $cl = function(className) {
 var greekEarned = 4;
 var greekElements = ["Blank", "fire", "water", "earth", "air", "steam"];
 var gEPhrase = ["It is useless.", "The core to all things hot.", "It can be both kind and cruel.", "A force to be reckoned with.", "Kindness on a warm day.", "Not liquid, not gas."];
-var steamEarned = false;
 //Open/Close
 $id("greekOC").onclick = function() {
   if(greekOpen == false) {
@@ -53,15 +52,16 @@ $id("greekSelect2").onclick = function() {
 
 //Mix Elements
 $id("mixGreek").onclick = function() {
-  if(($id("greekSelect1").getAttribute("element-value") == 1 && $id("greekSelect2").getAttribute("element-value") == 2 && steamEarned == false) || ($id("greekSelect1").getAttribute("element-value") == 2 && $id("greekSelect2").getAttribute("element-value") == 1 && steamEarned == false)) {
+  if(($id("greekSelect1").getAttribute("element-value") == 1 && $id("greekSelect1").getAttribute("element-value") == 2 && $id("gre1t6").getAttribute("isearned") == "false") || ($id("greekSelect1").getAttribute("element-value") == 2 && $id("greekSelect2").getAttribute("element-value") == 1 && $id("gre1t6").getAttribute("isearned") == "false")) {
     $id("unlockMP3").play();
     alert("You unlocked Steam!");
     $id("gre1t6").style.display = "block";
     $id("gre2t6").style.display = "block";
     greekEarned++;
-    steamEarned = true;
+    $id("gre1t6").setAttribute("isearned", "true");
+    $id("gre2t6").setAttribute("isearned", "true");
   } else {
     $id("errorMP3").play();
-    alert("This merge is not possible or has not been added!");
+    alert("This merge is not possible, has already been earned, or has not been added!");
   }
 }
