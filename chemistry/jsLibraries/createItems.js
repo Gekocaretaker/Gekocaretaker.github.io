@@ -122,6 +122,26 @@ function createItems() {
   createBre("aElements1");
   createEle("aElements1", "ame1t86", 3, "images/american/astatine.png", 85, "american");
   createEle("aElements1", "ame1t87", 3, "images/american/radon.png", 86, "american");
+  createEle("aElements1", "ame1t88", 3, "images/american/francium.png", 87, "american");
+  createEle("aElements1", "ame1t89", 3, "images/american/radium.png", 88, "american");
+  createEle("aElements1", "ame1t90", 3, "images/american/actinium.png", 89, "american");
+  createBre("aElements1");
+  createEle("aElements1", "ame1t91", 3, "images/american/thorium.png", 90, "american");
+  createEle("aElements1", "ame1t92", 3, "images/american/protactinium.png", 91, "american");
+  createEle("aElements1", "ame1t93", 3, "images/american/uranium.png", 92, "american");
+  createEle("aElements1", "ame1t94", 3, "images/american/neptunium.png", 93, "american");
+  createEle("aElements1", "ame1t95", 3, "images/american/plutonium.png", 94, "american");
+  createBre("aElements1");
+  createEle("aElements1", "ame1t96", 3, "images/american/americium.png", 95, "american");
+  createEle("aElements1", "ame1t97", 3, "images/american/curium.png", 96, "american");
+  createEle("aElements1", "ame1t98", 3, "images/american/berkelium.png", 97, "american");
+  createEle("aElements1", "ame1t99", 3, "images/american/californium.png", 98, "american");
+  createEle("aElements1", "ame1t100", 3, "images/american/einsteinium.png", 99, "american");
+  createBre("aElements1");
+  createEle("aElements1", "ame1t100", 3, "images/american/fermium.png", 100, "american");
+  createEle("aElements1", "ame1t101", 3, "images/american/mendelevium.png", 101, "american");
+  createEle("aElements1", "ame1t102", 3, "images/american/nobelium.png", 102, "american");
+  createEle("aElements1", "ame1t103", 3, "images/american/lawrencium.png", 103, "american");
 
   //Second american elements slot.
   createEle("aElements2", "ame2t1", 4, "images/blank.png", 0, "greek");
@@ -228,4 +248,24 @@ function createItems() {
   createBre("aElements2");
   createEle("aElements2", "ame2t86", 3, "images/american/astatine.png", 85, "american");
   createEle("aElements2", "ame2t87", 3, "images/american/radon.png", 86, "american");
+  createEle("aElements2", "ame2t88", 3, "images/american/francium.png", 87, "american");
+  createEle("aElements2", "ame2t89", 3, "images/american/radium.png", 88, "american");
+  createEle("aElements2", "ame2t90", 3, "images/american/actinium.png", 89, "american");
+  createBre("aElements2");
+  createEle("aElements2", "ame2t91", 3, "images/american/thorium.png", 90, "american");
+  createEle("aElements2", "ame2t92", 3, "images/american/protactinium.png", 91, "american");
+  createEle("aElements2", "ame2t93", 3, "images/american/uranium.png", 92, "american");
+  createEle("aElements2", "ame2t94", 3, "images/american/neptunium.png", 93, "american");
+  createEle("aElements2", "ame2t95", 3, "images/american/plutonium.png", 94, "american");
+  createBre("aElements2");
+  createEle("aElements2", "ame2t96", 3, "images/american/americium.png", 95, "american");
+  createEle("aElements2", "ame2t97", 3, "images/american/curium.png", 96, "american");
+  createEle("aElements2", "ame2t98", 3, "images/american/berkelium.png", 97, "american");
+  createEle("aElements2", "ame2t99", 3, "images/american/californium.png", 98, "american");
+  createEle("aElements2", "ame2t100", 3, "images/american/einsteinium.png", 99, "american");
+  createBre("aElements2");
+  createEle("aElements2", "ame2t100", 3, "images/american/fermium.png", 100, "american");
+  createEle("aElements2", "ame2t101", 3, "images/american/mendelevium.png", 101, "american");
+  createEle("aElements2", "ame2t102", 3, "images/american/nobelium.png", 102, "american");
+  createEle("aElements2", "ame2t103", 3, "images/american/lawrencium.png", 103, "american");
 }
