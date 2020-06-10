@@ -52,7 +52,7 @@ $id("greekSelect2").onclick = function() {
 
 //Mix Elements
 $id("mixGreek").onclick = function() {
-  if(($id("greekSelect1").getAttribute("element-value") == 1 && $id("greekSelect1").getAttribute("element-value") == 2 && $id("gre1t6").getAttribute("isearned") == "false") || ($id("greekSelect1").getAttribute("element-value") == 2 && $id("greekSelect2").getAttribute("element-value") == 1 && $id("gre1t6").getAttribute("isearned") == "false")) {
+  if(($id("greekSelect1").getAttribute("element-value") == 1 && $id("greekSelect2").getAttribute("element-value") == 2 && $id("gre1t6").getAttribute("isearned") == "false") || ($id("greekSelect1").getAttribute("element-value") == 2 && $id("greekSelect2").getAttribute("element-value") == 1 && $id("gre1t6").getAttribute("isearned") == "false")) {
     $id("unlockMP3").play();
     alert("You unlocked Steam!");
     $id("gre1t6").style.display = "block";

@@ -143,7 +143,6 @@ var aEleOp2 = false;
 var i;
 window.onload = function() {
  createItems();
- mixGreekEs();
 }
 
 setInterval(function() {
@@ -151,6 +150,7 @@ setInterval(function() {
     $id("ame1t30").style.display = "block";
     $id("ame2t30").style.display = "block";
     americanEarned++;
+    $id("ame1t30").setAttribute("isearned", "true");
     $id("ame2t30").setAttribute("isearned", "true");
     setTimeout(function() {
       $id("unlockMP3").play();
