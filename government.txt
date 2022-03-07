@@ -1,0 +1,190 @@
+/*
+Political Parties: https://en.wikipedia.org/wiki/List_of_political_parties_in_the_United_States
+*/
+Let's make a game!
+	name:Governing Power
+	by:Gekocaretaker
+	desc:A idle game based upon governments.
+	created:02/06/2021
+	version:1.0.0
+
+Settings
+	building cost increase:115%
+	building cost refund:50%
+	no particles
+	no bulk particles
+	spritesheet:icons, 48 by 48, https://orteil.dashnet.org/igm/stuff/bunnyIcons.png
+	stylesheet:https://orteil.dashnet.org/igm/stuff/bigBlue.css
+
+
+//Includes
+
+
+CSS
+	#games.filtersOn .thing.cantAfford.notOwned
+	{
+		filter:blur(3px);
+	}
+	#box-parties
+	{
+		height:25% !important;
+	}
+	#box-boosts
+	{
+		height:75% !important;
+	}
+	#box-res
+	{
+		height:20% !important;
+	}
+	#box-buttons
+	{
+		height:70% !important;
+		top:30% !important;
+		left:2.5% !important;
+		right:2.5% !important;
+	}
+	#box-buttons #box-things-Buttons
+	{
+		display:grid !important;
+		grid-template-columns:repeat(5, 1fr) !important;
+		gap:10px !important;
+	}
+	#box-partyContainer
+	{
+		height:60% !important;
+		overflow:scroll !important;
+		-ms-overflow-style:none !important;
+		scrollbar-width:none !important;
+	}
+	#box-partyContainer::-webkit-scrollbar
+	{
+		display:none !important;
+	}
+	#box-boostContainer
+	{
+		height:100% !important;
+		overflow:scroll !important;
+		-ms-overflow-style:none !important;
+		scrollbar-width:none !important;
+	}
+	#box-boostContainer::-webkit-scrollbar
+	{
+		display:none !important;
+	}
+
+Layout
+	*main
+		contains:res, buttons
+		*res
+			contains:Resources
+			class:fullWidth
+		*buttons
+			contains:Buttons
+	*store
+		contains:buildings, upgrades
+		*buildings
+			contains:BulkDisplay, Buildings
+			header:Buildings
+			tooltip origin:left
+		*upgrades
+			contains:parties, boost
+			*parties
+				contains:partyContainer
+				header:Government Parties.
+				*partyContainer
+					contains:tag:party
+			*boost
+				contains:boostContainer
+				header:Upgrades
+				*boostContainer
+					contains:tag:boost
+
+Buttons
+	*button1
+		name:Find Independent Voters
+		desc:Look for targets for your political party.
+		on click:yield 1 independent
+		icon:icons[0,2]
+	*button2
+		name:Convert to Republican
+		desc:Convince a independent voter to become a republican.
+		on click:
+			if (independent >= 1)
+				yield 1 republican
+				lose 1 independent
+			end
+		end
+		on tick:
+			if (have republicanParty)
+				show this
+			else
+				hide this
+			end
+		end
+		on start:hide this
+		icon:icons[0,3]
+	*button3
+		name:Convert to Democratic
+		desc:Convince a independent voter to become a democratic.
+		req:have democraticParty
+		on click:
+			if (independent >= 1)
+				yield 1 democratic
+				lose 1 independent
+			end
+		end
+		on tick:
+			if (have democraticParty)
+				show this
+			else
+				hide this
+			end
+		end
+		on start:hide this
+		icon:icons[0,3]
+
+Resources
+	*independent
+		name:Independent Voter|Independent Voters
+		desc:The perfect audience for you to get support.
+	*republican
+		name:Republican Voter|Republican Voters
+		desc:They have a red elephant.
+		req:have republicanParty
+	*democratic
+		name:Democratic Voter|Democratic Voters
+		desc:They have a blue donkey.
+		req:have democraticParty
+
+Buildings
+
+
+Upgrades
+	*TEMPLATE
+		on earn:hide this
+	*republicanParty
+		name:Republic Party
+		desc:Go Red!
+		cost:10 independent
+		tag:party
+		req:5 independent:earned
+		icon:icons[2,6]
+	*democraticParty
+		name:Democratic Party
+		desc:Go Blue!
+		cost:10 independent
+		tag:party
+		req:5 independent:earned
+		icon:icons[2,7]
+
+Achievements
+
+
+Shinies
+	*tvInterview
+		name:TV Interview
+		on click:yield (independent:ps) independent
+		movement:anywhere growShrink pulse:0.25
+		frequency:60
+		frequency variation:120
