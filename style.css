@@ -1,0 +1,14 @@
+.banner-left, .banner-text, .banner-right {
+  font-size: 1.2rem;
+  padding: 4px 0 4px 0;
+}
+.banner-text {
+  color: white;
+  background-color: #00000077;
+  font-weight: 600;
+}
+.banner-link {
+  color: white;
+  font-weight: 600;
+  tex-decoration: none;
+}
