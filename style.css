@@ -12,3 +12,9 @@
   font-weight: 600;
   tex-decoration: none;
 }
+.banner-left {
+  background: linear-gradient(90deg. rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.46) 100%);
+}
+.banner-right {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0) 100%);
+}
