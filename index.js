@@ -1,4 +1,4 @@
-function toggleDisplay(id) {
+function toggleDisplay(var id) {
   if(document.getElementById(id).style.display == 'none') {
     document.getElementById(id).style.display = 'block';
   } else {
