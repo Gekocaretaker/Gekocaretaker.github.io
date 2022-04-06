@@ -150,7 +150,7 @@ Buttons
 		on click:
 			if (independent >= 1)
 				yield 1 libertarian
-				lose 1 idependent
+				lose 1 independent
 			end
 		end
 		on tick:
