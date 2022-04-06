@@ -123,7 +123,7 @@ Buttons
 			end
 		end
 		on start:hide this
-		icon:icons[0,3]
+		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Republican_Disc.svg/90px-Republican_Disc.svg.png
 	*button3
 		name:Convert to Democratic
 		desc:Convince a independent voter to become a democratic.
@@ -142,7 +142,26 @@ Buttons
 			end
 		end
 		on start:hide this
-		icon:icons[0,3]
+		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Democratic_Disc.svg/90px-Democratic_Disc.svg.png
+	*button4
+		name:Convert to Libertarian
+		desc:Convince a independent voter to become a libertarian.
+		req:have libertarianParty
+		on click:
+			if (independent >= 1)
+				yield 1 libertarian
+				lose 1 idependent
+			end
+		end
+		on tick:
+			if (have libertarianParty)
+				show this
+			else
+				hide this
+			end
+		end
+		on start:hide this
+		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Libertarian_Disc.svg/90px-Libertarian_Disc.svg.png
 
 Resources
 	*independent
@@ -156,6 +175,10 @@ Resources
 		name:Democratic Voter|Democratic Voters
 		desc:They have a blue donkey.
 		req:have democraticParty
+	*libertarian
+		name:Libertarian Voter|Libertarian Voters
+		desc:They have a yellow porcupine
+		req:have libertarianParty
 
 Buildings
 
@@ -169,14 +192,21 @@ Upgrades
 		cost:10 independent
 		tag:party
 		req:5 independent:earned
-		icon:icons[2,6]
+		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Republican_Disc.svg/90px-Republican_Disc.svg.png
 	*democraticParty
 		name:Democratic Party
 		desc:Go Blue!
 		cost:10 independent
 		tag:party
 		req:5 independent:earned
-		icon:icons[2,7]
+		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Democratic_Disc.svg/90px-Democratic_Disc.svg.png
+	*libertarianParty
+		name:Libertarian Party
+		desc:Go Yellow!
+		cost: 10 independent
+		tag:party
+		req:5 independent:earned
+		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Libertarian_Disc.svg/90px-Libertarian_Disc.svg.png
 
 Achievements
 
