@@ -72,6 +72,13 @@ CSS
 	{
 		display:none !important;
 	}
+	.thing-icon, .particle
+	{
+		width: 48px;
+		height: 48px;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
 
 Layout
 	*main
@@ -88,7 +95,7 @@ Layout
 			header:Buildings
 			tooltip origin:left
 		*upgrades
-			contains:parties, boost
+			contains:parties, boost, buildings
 			*parties
 				contains:partyContainer
 				header:Government Parties.
@@ -99,13 +106,18 @@ Layout
 				header:Upgrades
 				*boostContainer
 					contains:tag:boost
+			*buildings
+				contains:buildingContainer
+				header:Buildings
+				*buildingContainer
+					contains:tag:buildings
 
 Buttons
 	*button1
 		name:Find Independent Voters
 		desc:Look for targets for your political party.
 		on click:yield 1 independent
-		icon:icons[0,2]
+		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/NeutralPartyPlaceholder.svg/330px-NeutralPartyPlaceholder.svg.png
 	*button2
 		name:Convert to Republican
 		desc:Convince a independent voter to become a republican.
@@ -181,7 +193,52 @@ Resources
 		req:have libertarianParty
 
 Buildings
-
+	*school
+		name:School
+		desc:Few schools are good. These ones teach government. Control the world through schools.
+		cost:10 independent
+		tag:boost
+		req:5 independent:earned
+		icon:https://upload.wikimedia.org/wikipedia/commons/b/b4/School_icon.png
+		on tick:
+			yield 1 independent
+		end
+	*college
+		name:College
+		desc:They don't care what you do. Just learn more about government.
+		cost:100 independent
+		tag:boost
+		req:75 idependent:earned
+		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Paying_for_College_%2889572%29_-_The_Noun_Project.svg/512px-Paying_for_College_%2889572%29_-_The_Noun_Project.svg.png
+		on tick:
+			yield 10 independent
+		end
+	*modernLiberalism
+		name:Modern Liberalism
+		desc:A form of social liberalism found in American politics. It combines ideas of civil liberty and equality with support for social justice and a "checked-and-validated" market economy.
+		cost:25 democratic
+		tag:boost
+		req:10 democratic:earned and 5 independent:earned
+		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Yellow_flag_waving.svg/75px-Yellow_flag_waving.svg.png
+		on tick:
+			if (independent >= 1)
+				yield 1 democratic
+				lose 1 independent
+			end
+		end
+	*conservatism
+		name:Conservatism
+		desc:A political and social philosphy which characteristically prioritizes American traditions, republicanism, classical liberalism, and limited federal government power in relation to the states.
+		cost:25 republican
+		tag:boost
+		req:10 republican:earned and 5 independent:earned
+		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Blue_flag_waving.svg/75px-Blue_flag_waving.svg.png
+		on tick:
+			if (independent >= 1)
+				yield 1 republican
+				lose 1 independent
+			end
+		end
 
 Upgrades
 	*TEMPLATE
@@ -203,10 +260,10 @@ Upgrades
 	*libertarianParty
 		name:Libertarian Party
 		desc:Go Yellow!
-		cost: 10 independent
+		cost:10 independent
 		tag:party
 		req:5 independent:earned
-		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Libertarian_Disc.svg/90px-Libertarian_Disc.svg.png
+		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Libertarian_Disc.svg/90px-Libertarian_Disc.svg.png		
 
 Achievements
 
