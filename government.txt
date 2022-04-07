@@ -203,7 +203,7 @@ Buildings
 		desc:They don't care what you do. Just learn more about government.
 		cost:100 independent
 		tag:boost
-		req:75 idependent:earned
+		req:75 independent:earned
 		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Paying_for_College_%2889572%29_-_The_Noun_Project.svg/512px-Paying_for_College_%2889572%29_-_The_Noun_Project.svg.png
 		on tick:
 			yield 10 independent
