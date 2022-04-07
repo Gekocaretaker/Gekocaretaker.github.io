@@ -31,7 +31,11 @@ CSS
 	}
 	#box-boosts
 	{
-		height:75% !important;
+		height:50% !important;
+	}
+	#box-buildings
+	{
+		height:25% !important
 	}
 	#box-res
 	{
@@ -69,6 +73,17 @@ CSS
 		scrollbar-width:none !important;
 	}
 	#box-boostContainer::-webkit-scrollbar
+	{
+		display:none !important;
+	}
+	#box-buildingContainer
+	{
+		height:60% !important;
+		overflow:scroll !important;
+		-ms-overflow-style:none !important;
+		scrollbar-width:none !important;
+	}
+	#box-buildingContainer::-webkit-scrollbar
 	{
 		display:none !important;
 	}
