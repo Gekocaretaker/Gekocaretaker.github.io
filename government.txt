@@ -120,7 +120,7 @@ Layout
 			*structures
 				contains:structureContainer
 				header:Buildings
-				*stuctureContainer
+				*structureContainer
 					contains:tag:structure
 
 Buttons
