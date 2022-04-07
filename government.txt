@@ -117,7 +117,7 @@ Layout
 				header:Upgrades
 				*boostContainer
 					contains:tag:boost
-			*structuress
+			*structures
 				contains:structureContainer
 				header:Buildings
 				*stuctureContainer
