@@ -33,7 +33,7 @@ CSS
 	{
 		height:50% !important;
 	}
-	#box-buildings
+	#box-structures
 	{
 		height:25% !important
 	}
@@ -76,14 +76,14 @@ CSS
 	{
 		display:none !important;
 	}
-	#box-buildingContainer
+	#box-structureContainer
 	{
 		height:60% !important;
 		overflow:scroll !important;
 		-ms-overflow-style:none !important;
 		scrollbar-width:none !important;
 	}
-	#box-buildingContainer::-webkit-scrollbar
+	#box-structureContainer::-webkit-scrollbar
 	{
 		display:none !important;
 	}
@@ -106,7 +106,7 @@ Layout
 	*store
 		contains:upgrades
 		*upgrades
-			contains:parties, boost, buildings
+			contains:parties, boost, structures
 			*parties
 				contains:partyContainer
 				header:Government Parties.
@@ -117,11 +117,11 @@ Layout
 				header:Upgrades
 				*boostContainer
 					contains:tag:boost
-			*buildings
-				contains:buildingContainer
+			*structuress
+				contains:structureContainer
 				header:Buildings
-				*buildingContainer
-					contains:tag:building
+				*stuctureContainer
+					contains:tag:structure
 
 Buttons
 	*button1
@@ -208,7 +208,7 @@ Buildings
 		name:School
 		desc:Few schools are good. These ones teach government. Control the world through schools.
 		cost:10 independent
-		tag:building
+		tag:structure
 		req:5 independent:earned
 		icon:https://upload.wikimedia.org/wikipedia/commons/b/b4/School_icon.png
 		on tick:
@@ -218,7 +218,7 @@ Buildings
 		name:College
 		desc:They don't care what you do. Just learn more about government.
 		cost:100 independent
-		tag:building
+		tag:structure
 		req:75 independent:earned
 		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Paying_for_College_%2889572%29_-_The_Noun_Project.svg/512px-Paying_for_College_%2889572%29_-_The_Noun_Project.svg.png
 		on tick:
