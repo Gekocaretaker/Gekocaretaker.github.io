@@ -106,11 +106,6 @@ Layout
 				header:Upgrades
 				*boostContainer
 					contains:tag:boost
-			*buildings
-				contains:buildingContainer
-				header:Buildings
-				*buildingContainer
-					contains:tag:buildings
 
 Buttons
 	*button1
