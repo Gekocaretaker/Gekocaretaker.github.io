@@ -89,11 +89,7 @@ Layout
 		*buttons
 			contains:Buttons
 	*store
-		contains:buildings, upgrades
-		*buildings
-			contains:BulkDisplay, Buildings
-			header:Buildings
-			tooltip origin:left
+		contains:upgrades
 		*upgrades
 			contains:parties, boost, buildings
 			*parties
@@ -106,6 +102,11 @@ Layout
 				header:Upgrades
 				*boostContainer
 					contains:tag:boost
+			*buildings
+				contains:buildingContainer
+				header:Buildings
+				*buildingContainer
+					contains:tag:building
 
 Buttons
 	*button1
@@ -192,7 +193,7 @@ Buildings
 		name:School
 		desc:Few schools are good. These ones teach government. Control the world through schools.
 		cost:10 independent
-		tag:boost
+		tag:building
 		req:5 independent:earned
 		icon:https://upload.wikimedia.org/wikipedia/commons/b/b4/School_icon.png
 		on tick:
@@ -202,7 +203,7 @@ Buildings
 		name:College
 		desc:They don't care what you do. Just learn more about government.
 		cost:100 independent
-		tag:boost
+		tag:building
 		req:75 independent:earned
 		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Paying_for_College_%2889572%29_-_The_Noun_Project.svg/512px-Paying_for_College_%2889572%29_-_The_Noun_Project.svg.png
 		on tick:
