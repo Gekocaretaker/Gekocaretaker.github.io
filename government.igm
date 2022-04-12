@@ -9,16 +9,10 @@ Let's make a game!
 	version:1.0.0
 
 Settings
-	building cost increase:115%
-	building cost refund:50%
+	building cost increase:125%
+	building cost refund:75%
 	no particles
 	no bulk particles
-	spritesheet:icons, 48 by 48, https://orteil.dashnet.org/igm/stuff/bunnyIcons.png
-	stylesheet:https://orteil.dashnet.org/igm/stuff/bigBlue.css
-
-
-//Includes
-
 
 CSS
 	#games.filtersOn .thing.cantAfford.notOwned
@@ -104,24 +98,22 @@ Layout
 		*buttons
 			contains:Buttons
 	*store
-		contains:upgrades
-		*upgrades
-			contains:parties, boost, structures
-			*parties
-				contains:partyContainer
-				header:Government Parties.
-				*partyContainer
-					contains:tag:party
-			*boost
-				contains:boostContainer
-				header:Upgrades
-				*boostContainer
-					contains:tag:boost
-			*structures
-				contains:structureContainer
-				header:Buildings
-				*structureContainer
-					contains:tag:structure
+		contains:parties, boost, structure
+		*parties
+			contains:partyContainer
+			header:Government Parties.
+			*partyContainer
+				contains:tag:party
+		*boost
+			contains:boostContainer
+			header:Upgrades
+			*boostContainer
+				contains:tag:boost
+		*structures
+			contains:structureContainer
+			header:Buildings
+			*structureContainer
+				contains:tag:structure
 
 Buttons
 	*button1
@@ -185,6 +177,25 @@ Buttons
 		end
 		on start:hide this
 		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Libertarian_Disc.svg/90px-Libertarian_Disc.svg.png
+	*button5
+		name:Convert to Progressive
+		desc:Convince a independent voter to become a progressive.
+		req:have vermontProgressiveParty
+		on click:
+			if (independent >= 1)
+				yield 1 progressive
+				lose 1 independent
+			end
+		end
+		on tick:
+			if (have vermontProgressiveParty)
+				show this
+			else
+				hide this
+			end
+		end
+		on start:hide this
+		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Vermont_Progressive_Party_Logo.svg/512px-Vermont_Progressive_Party_Logo.svg.png
 
 Resources
 	*independent
@@ -202,6 +213,10 @@ Resources
 		name:Libertarian Voter|Libertarian Voters
 		desc:They have a yellow porcupine
 		req:have libertarianParty
+	*progressive
+		name:Vermont Progressive Voter|Vermont Progressive Voters
+		desc:They have a red bird sitting on a red letter p.
+		req:have vermontProgressiveParty
 
 Buildings
 	*school
@@ -229,7 +244,7 @@ Buildings
 		desc:A form of social liberalism found in American politics. It combines ideas of civil liberty and equality with support for social justice and a "checked-and-validated" market economy.
 		cost:25 democratic
 		tag:boost
-		req:10 democratic:earned and 5 independent:earned
+		req:10 democratic:earned and 50 independent:earned
 		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Yellow_flag_waving.svg/75px-Yellow_flag_waving.svg.png
 		on tick:
 			if (independent >= 1)
@@ -242,11 +257,37 @@ Buildings
 		desc:A political and social philosphy which characteristically prioritizes American traditions, republicanism, classical liberalism, and limited federal government power in relation to the states.
 		cost:25 republican
 		tag:boost
-		req:10 republican:earned and 5 independent:earned
+		req:10 republican:earned and 50 independent:earned
 		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Blue_flag_waving.svg/75px-Blue_flag_waving.svg.png
 		on tick:
 			if (independent >= 1)
 				yield 1 republican
+				lose 1 independent
+			end
+		end
+	*libertarianism
+		name:Libertarianism
+		desc:A political philosphy promoting individual liberty. According to common meanings of conservatism and liberalism in the United States, libertarianism has been described as conservatism on economic issues and liberal on personal freedom.
+		cost:25 libertarian
+		tag:boost
+		req:10 libertarian:earned and 50 independent:earned
+		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Libertarian_movement_of_Belarus_logo.jpg/600px-Libertarian_movement_of_Belarus_logo.jpg
+		on tick:
+			if (independent >= 1)
+				yield 1 libertarian
+				lose 1 independent
+			end
+		end
+	*progressivism
+		name:Progressivism
+		desc:A political philosphy that addresses ideas, impulses, and issues stemming from modernization of American society.
+		cost:25 progressive
+		tag:boost
+		req:10 progressive:earned and 50 independent:earned
+		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/240px-Wikipedia_interwiki_section_gear_icon.svg.png
+		on tick:
+			if (independent >= 1)
+				yield 1 progressive
 				lose 1 independent
 			end
 		end
@@ -274,7 +315,14 @@ Upgrades
 		cost:10 independent
 		tag:party
 		req:5 independent:earned
-		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Libertarian_Disc.svg/90px-Libertarian_Disc.svg.png		
+		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Libertarian_Disc.svg/90px-Libertarian_Disc.svg.png
+	*vermontProgressiveParty
+		name:Vermont Progressive Party
+		desc:Go Blue! This color is way too popular.
+		cost:10 independent
+		tag:party
+		req:5 independent:earned
+		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Vermont_Progressive_Party_Logo.svg/150px-Vermont_Progressive_Party_Logo.svg.png
 
 Achievements
 
