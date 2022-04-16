@@ -180,7 +180,7 @@ Buttons
 	*button5
 		name:Convert to Progressive
 		desc:Convince a independent voter to become a progressive.
-		req:have vermontProgressiveParty
+		req:have vermontProgressParty
 		on click:
 			if (independent >= 1)
 				yield 1 progressive
@@ -188,7 +188,7 @@ Buttons
 			end
 		end
 		on tick:
-			if (have vermontProgressiveParty)
+			if (have vermontProgressParty)
 				show this
 			else
 				hide this
@@ -316,7 +316,7 @@ Upgrades
 		tag:party
 		req:5 independent:earned
 		icon:https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Libertarian_Disc.svg/90px-Libertarian_Disc.svg.png
-	*vermontProgressiveParty
+	*vermontProgressParty
 		name:Vermont Progressive Party
 		desc:Go Blue! This color is way too popular.
 		cost:10 independent
