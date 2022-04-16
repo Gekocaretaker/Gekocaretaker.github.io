@@ -216,7 +216,7 @@ Resources
 	*progressive
 		name:Vermont Progressive Voter|Vermont Progressive Voters
 		desc:They have a red bird sitting on a red letter p.
-		req:have vermontProgressiveParty
+		req:have vermontProgressParty
 
 Buildings
 	*school
