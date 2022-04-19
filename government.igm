@@ -98,7 +98,7 @@ Layout
 		*buttons
 			contains:Buttons
 	*store
-		contains:parties, boost, structure
+		contains:parties, boost, structures
 		*parties
 			contains:partyContainer
 			header:Government Parties.
@@ -109,7 +109,7 @@ Layout
 			header:Upgrades
 			*boostContainer
 				contains:tag:boost
-		*structure
+		*structures
 			contains:structureContainer
 			header:Buildings
 			*structureContainer
