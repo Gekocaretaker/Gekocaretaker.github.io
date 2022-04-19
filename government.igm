@@ -98,13 +98,13 @@ Layout
 		*buttons
 			contains:Buttons
 	*store
-		contains:parties, boost, structures
+		contains:parties, boosts, structures
 		*parties
 			contains:partyContainer
 			header:Government Parties.
 			*partyContainer
 				contains:tag:party
-		*boost
+		*boosts
 			contains:boostContainer
 			header:Upgrades
 			*boostContainer
