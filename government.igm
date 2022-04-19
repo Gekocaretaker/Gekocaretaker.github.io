@@ -29,11 +29,11 @@ CSS
 	}
 	#box-structures
 	{
-		height:25% !important
+		height:50% !important
 	}
 	#box-res
 	{
-		height:20% !important;
+		height:50% !important;
 	}
 	#box-buttons
 	{
