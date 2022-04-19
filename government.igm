@@ -27,13 +27,13 @@ CSS
 	{
 		height:50% !important;
 	}
-	#box-structures
+	/*#box-structures
 	{
-		height:50% !important
-	}
+		height:25% !important
+	}*/
 	#box-res
 	{
-		height:50% !important;
+		height:20% !important;
 	}
 	#box-buttons
 	{
