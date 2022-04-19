@@ -25,12 +25,12 @@ CSS
 	}
 	#box-boosts
 	{
-		height:50% !important;
+		height:25% !important;
 	}
-	/*#box-structures
+	#box-structures
 	{
 		height:25% !important
-	}*/
+	}
 	#box-res
 	{
 		height:20% !important;
