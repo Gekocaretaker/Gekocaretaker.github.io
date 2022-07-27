@@ -1,0 +1,10 @@
+
+.addon {
+    border-width: 2;
+    border-color: #818181;
+    border-style: ridge;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    background-color: rgba(129, 129, 129, 0.0625);
+}

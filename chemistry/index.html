@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Chemistry Mix</title>
-<link rel="stylesheet" href="../../style.css" />
+<link rel="stylesheet" href="/style.css" />
 <style type="text/css">
 .gGrid {
   display: grid;
@@ -85,58 +85,89 @@
 </style>
 </head>
 <body>
-  <div data-v-159c1d16="" style="background-image: url(&quot;../images/ukraine-flag.jpg&quot;); background-size: contain; text-align: center;"><span data-v-159c1d16="" class="banner-left">
-    &nbsp;&nbsp;
-  </span> <span data-v-159c1d16="" class="banner-text"><a data-v-159c1d16="" target="_new" href="https://www.npr.org/2022/02/25/1082992947/ukraine-support-help?t=1645979785003" class="banner-link">
-      The world stands with Ukraine
-    </a></span> <span data-v-159c1d16="" class="banner-right">
-    &nbsp;&nbsp;
-  </span> <span data-v-159c1d16=""><i data-v-159c1d16="" class="fas fa-times close-icon"></i></span></div>
-  <button id="greekOC">Open/Close Greek</button><br />
-<div class="gGrid">
-  <div id="greek1" style="display:none;">
-    <div id="greekSelect1" style="width:52px; height:52px;" element-value="0">
-        <img src="images/blank.png" style="width:52px; height:52px;" />
-    </div>
-    <div id="gElements1" style="display:none;">
+	<div id="sidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+		<a href="/">
+			<span>
+				<div class="material-icons"><img src="/images/icon.png" /></div>
+				<span class="icon-text">Home</span>
+			</span>
+		</a>
+		<a href="/settings/">
+			<span>
+				<div class="material-icons"><img class="custom-icon-color" src="/images/cog.png" /></div>
+				<span class="icon-text">Settings</span>
+			</span>
+		</a>
+		<a>
+			<div class="material-icons" style="text-align: center;">&#8744;</div>
+			<span class="icon-text">Games</span>
+		</a>
+		<a href="#">
+			<span>
+				<div class="material-icons"><img src="/images/chemistry.png" /></div>
+				<span class="icon-text">Chemistry</span>
+			</span>
+		</a>
+		<a href="/government/">
+			<span>
+				<div class="material-icons"><img src="/images/HugePowerFragment.png" /></div>
+				<span class="icon-text-small">Idle Government</span>
+			</span>
+		</a>
+		<a href="/minecraft/">
+			<span>
+				<div class="material-icons"><img src="/images/minecraft.png" /></div>
+				<span class="icon-text-small">Minecraft Stuff</span>
+			</span>
+		</a>
+	</div>
+	<div id="main">
+		<button id="greekOC">Open/Close Greek</button><br />
+		<div class="gGrid">
+			<div id="greek1" style="display:none;">
+				<div id="greekSelect1" style="width:52px; height:52px;" element-value="0">
+					<img src="images/blank.png" style="width:52px; height:52px;" />
+				</div>
+				<div id="gElements1" style="display:none;">
 
-    </div>
-  </div>
-  <textarea style="display:none; resize:none;" id="greekText1" disabled>Blank - It is useless.</textarea>
-  <div id="greek2" style="display:none;">
-    <div id="greekSelect2" style="width:52px; height:52px;" element-value="0">
-      <img src="images/blank.png" style="width:52px; height:52px;" />
-    </div>
-    <div id="gElements2" style="display:none;">
+				</div>
+			</div>
+			<textarea style="display:none; resize:none;" id="greekText1" disabled>Blank - It is useless.</textarea>
+			<div id="greek2" style="display:none;">
+				<div id="greekSelect2" style="width:52px; height:52px;" element-value="0">
+					<img src="images/blank.png" style="width:52px; height:52px;" />
+				</div>
+				<div id="gElements2" style="display:none;">
 
-    </div>
-  </div>
-  <textarea style="display:none; resize:none;" id="greekText2" disabled>Blank - It is useless.</textarea>
-  <button id="mixGreek" style="display:none;">Mix Elements</button>
-</div>
-  <br /><br /><br /><br /><br /><br />
-  <button id="americanOC">Open/Close American</button><br />
-<div class="aGrid">
-  <div id="american1" style="display:none;">
-    <div id="americanSelect1" style="width:52px; height:52px;" element-value="0">
-      <img src="images/blank.png" style="width:52px; height:52px;" />
-    </div>
-    <div id="aElements1" style="display:none;">
+				</div>
+			</div>
+			<textarea style="display:none; resize:none;" id="greekText2" disabled>Blank - It is useless.</textarea>
+			<button id="mixGreek" style="display:none;">Mix Elements</button>
+		</div>
+		<br /><br /><br /><br /><br /><br />
+		<button id="americanOC">Open/Close American</button><br />
+		<div class="aGrid">
+			<div id="american1" style="display:none;">
+				<div id="americanSelect1" style="width:52px; height:52px;" element-value="0">
+					<img src="images/blank.png" style="width:52px; height:52px;" />
+				</div>
+				<div id="aElements1" style="display:none;">
 
-    </div>
-  </div>
-  <textarea style="display:none; resize:none;" id="americanText1" disabled>Blank - It is useless.</textarea>
-  <div id="american2" style="display:none;">
-    <div id="americanSelect2" style="width:52px; height:52px;" element.value="0">
-      <img src="images/blank.png" style="width:52px; height:52px;" />
-    </div>
-    <div id="aElements2" style="display:none;">
+				</div>
+			</div>
+			<textarea style="display:none; resize:none;" id="americanText1" disabled>Blank - It is useless.</textarea>
+			<div id="american2" style="display:none;">
+				<div id="americanSelect2" style="width:52px; height:52px;" element.value="0">
+					<img src="images/blank.png" style="width:52px; height:52px;" />
+				</div>
+				<div id="aElements2" style="display:none;">
 
-    </div>
-  </div>
-  <textarea style="display:none; resize:none;" id="americanText2" disabled>Blank - It is useless.</textarea>
-  <button id="mixAmerican" style="display:none;">Mix Elements</button><br /><br />
-</div>
+				</div>
+			</div>
+			<textarea style="display:none; resize:none;" id="americanText2" disabled>Blank - It is useless.</textarea>
+			<button id="mixAmerican" style="display:none;">Mix Elements</button><br /><br />
+		</div>
+	</div>
 <script src="jsLibraries/greekChem.js"></script>
 <script src="jsLibraries/americanChem.js"></script>
 <script src="jsLibraries/otherFunc.js"></script>
@@ -170,5 +201,10 @@ setInterval(function() {
 </script>
 <audio id="unlockMP3" src="audio/unlockNew.mp3" preload="auto" style="display:none;"></audio>
 <audio id="errorMP3" src="audio/error.mp3" preload="auto" style="display:none;"></audio>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/index.js"></script>
 </body>
 </html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Settings</title>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+	    <link rel="stylesheet" href="/style.css" />
+        <link rel="stylesheet" href="/input.css" />
+    </head>
+    <body>
+        <div id="sidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+            <a href="/">
+                <span>
+                    <div class="material-icons"><img src="/images/icon.png" /></div>
+                    <span class="icon-text">Home</span>
+                </span>
+            </a>
+            <a href="#">
+                <span>
+                    <div class="material-icons"><img class="custom-icon-color" src="/images/cog.png" /></div>
+                    <span class="icon-text">Settings</span>
+                </span>
+            </a>
+            <a>
+                <div class="material-icons" style="text-align: center;">&#8744;</div>
+                <span class="icon-text">Games</span>
+            </a>
+            <a href="/chemistry/">
+                <span>
+                    <div class="material-icons"><img src="/images/chemistry.png" /></div>
+                    <span class="icon-text">Chemistry</span>
+                </span>
+            </a>
+            <a href="/government/">
+                <span>
+                    <div class="material-icons"><img src="/images/HugePowerFragment.png" /></div>
+                    <span class="icon-text-small">Idle Government</span>
+                </span>
+            </a>
+            <a href="/minecraft/">
+                <span>
+                    <div class="material-icons"><img src="/images/minecraft.png" /></div>
+                    <span class="icon-text-small">Minecraft Stuff</span>
+                </span>
+            </a>
+        </div>
+        <div id="main">
+            <form class="form-style-5" id="settings-form">
+                <label for="theme">Theme: </label>
+                <select name="themes" id="theme">
+                    <option value="white">White</option>
+                    <option value="black">Black</option>
+                    <option value="light_gray">Light Gray</option>
+                    <option value="gray">Gray</option>
+                    <option value="brown">Brown</option>
+                    <option value="red">Red</option>
+                    <option value="orange">Orange</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="lime">Lime</option>
+                    <option value="green">Green</option>
+                    <option value="cyan">Cyan</option>
+                    <option value="light_blue">Light Blue</option>
+                    <option value="blue">Blue</option>
+                    <option value="purple">Purple</option>
+                    <option value="magenta">Magenta</option>
+                    <option value="pink">Pink</option>
+                </select>
+                <button id="save">Save</button>
+            </form>
+        </div>
+        <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/index.js"></script>
+    <script type="text/javascript" src="settings.js"></script>
+    </body>
+</html>
