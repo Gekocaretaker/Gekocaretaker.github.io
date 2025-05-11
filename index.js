@@ -1,27 +1,54 @@
 // Color filter generator: https://codepen.io/sosuke/pen/Pjoqqp
 
 var miniSidebar = true;
-const Themes = Object.freeze({
-	White: Symbol("white"),
-	Black: Symbol("black"),
-	LightGray: Symbol("light_gray"),
-	Gray: Symbol("gray"),
-	Brown: Symbol("brown"),
-	Red: Symbol("red"),
-	Orange: Symbol("orange"),
-	Yellow: Symbol("yellow"),
-	Lime: Symbol("lime"),
-	Green: Symbol("green"),
-	Cyan: Symbol("cyan"),
-	LightBlue: Symbol("light_blue"),
-	Blue: Symbol("blue"),
-	Purple: Symbol("purple"),
-	Magenta: Symbol("magenta"),
-	Pink: Symbol("pink") // TODO: Rainbow, Flags, and other stuff?
-});
+var showSidebar = true;
+var params;
+
+const Themes = {
+	white: {
+		sidebar: "url('/images/backgrounds/white_sidebar.png')",
+		body: "url('/images/backgrounds/white_main.png')",
+		iconColor: "#414141",
+		linkColor: "#080808",
+		linkHover: "invert(23%) sepia(5%) saturate(0%) hue-rotate(139deg) brightness(103%) contrast(95%)",
+		backingColor: "#f4f7f8"
+	},
+	black: {
+		sidebar: "url('/images/backgrounds/black_sidebar.png')",
+		body: "url('/images/backgrounds/black_main.png')",
+		iconColor: "#bfbfbf",
+		linkColor: "#dfdfdf",
+		linkHover: "invert(82%) sepia(0%) saturate(1111%) hue-rotate(213deg) brightness(102%) contrast(74%)",
+		backingColor: "#1f2c31"
+	},
+	light_gray: {
+		sidebar: "url('/images/backgrounds/light_gray_sidebar.png')",
+		body: "url('/images/backgrounds/light_gray_main.png')",
+		iconColor: "#414141",
+		linkColor: "#080808",
+		linkHover: "invert(23%) sepia(5%) saturate(0%) hue-rotate(139deg) brightness(103%) contrast(95%)",
+		backingColor: "#45636d"
+	},
+	gray: {
+		sidebar: "url('/images/backgrounds/gray_sidebar.png')",
+		body: "url('/images/backgrounds/gray_main.png')",
+		iconColor: "#bfbfbf",
+		linkColor: "#dfdfdf",
+		linkHover: "invert(82%) sepia(0%) saturate(1111%) hue-rotate(213deg) brightness(102%) contrast(74%)",
+		backingColor: "#7097a4"
+	}
+}
 
 $(window).on("load", function() {
 	updateTheme();
+
+	params = new URLSearchParams(window.location.search);
+
+	if (params.get("sidebar")) {
+		showSidebar = false;
+	}
+
+	shouldShowSidebar();
 });
 
 function toggleDisplay(id) {
@@ -35,74 +62,37 @@ function toggleDisplay(id) {
 function toggleSidebar() {
 	if (miniSidebar) {
 		$('#sidebar').css('width', '250px');
-		$('#main').css('marginLeft', '250px');
 		miniSidebar = false;
 	} else {
 		$('#sidebar').css('width', '85px');
-		$('#main').css('marginLeft', '85px');
 		miniSidebar = true;
 	}
 }
 
 function updateTheme() {
 	var theme = localStorage.getItem("theme");
-	switch(theme) {
-		// The 5 theme objects: '.sidebar' 'body' '.custom-icon-color' '.sidebar a' '.sidebar a:hover' body
-		case "white":
-			setThemeData("url('/images/backgrounds/white_sidebar.png')", "url('/images/backgrounds/white_main.png')", "#414141", "#080808", "invert(23%) sepia(5%) saturate(0%) hue-rotate(139deg) brightness(103%) contrast(95%)");
-			break;
-		case "black":
-			setThemeData("url('/images/backgrounds/black_sidebar.png')", "url('/images/backgrounds/black_main.png')", "#bfbfbf", "#dfdfdf", "invert(82%) sepia(0%) saturate(1111%) hue-rotate(213deg) brightness(102%) contrast(74%)");
-			break;
-		case "light_gray":
-			setThemeData("url('/images/backgrounds/light_gray_sidebar.png')", "url('/images/backgrounds/light_gray_main.png')", "#414141", "#080808", "invert(23%) sepia(5%) saturate(0%) hue-rotate(139deg) brightness(103%) contrast(95%)");
-			break;
-		case "gray":
-			setThemeData("url('/images/backgrounds/gray_sidebar.png')", "url('/images/backgrounds/gray_main.png')", "#bfbfbf", "#dfdfdf", "invert(82%) sepia(0%) saturate(1111%) hue-rotate(213deg) brightness(102%) contrast(74%)");
-			break;
-		case "brown":
-			setThemeData("url('/images/backgrounds/brown_sidebar.png')", "url('/images/backgrounds/brown_main.png')", "#bfbfbf", "#dfdfdf", "invert(82%) sepia(0%) saturate(1111%) hue-rotate(213deg) bridhtness(102%) contrast(74%)");
-			break;
-		case "red":
-			setThemeData("url('/images/backgrounds/red_sidebar.png')", "url('/images/backgrounds/red_main.png')", "#bfbfbf", "#dfdfdf", "invert(82%) sepia(0%) saturate(1111%) hue-rotate(213deg) bridhtness(102%) contrast(74%)");
-			break;
-		case "orange":
-			setThemeData("url('/images/backgrounds/orange_sidebar.png')", "url('/images/backgrounds/orange_main.png')", "#414141", "#080808", "invert(23%) sepia(5%) saturate(0%) hue-rotate(139deg) brightness(103%) contrast(95%)");
-			break;
-		case "yellow":
-			setThemeData("url('/images/backgrounds/yellow_sidebar.png')", "url('/images/backgrounds/yellow_main.png')", "#414141", "#080808", "invert(23%) sepia(5%) saturate(0%) hue-rotate(139deg) brightness(103%) contrast(95%)");
-			break;
-		case "lime":
-			setThemeData("url('/images/backgrounds/lime_sidebar.png')", "url('/images/backgrounds/lime_main.png')", "#414141", "#080808", "invert(23%) sepia(5%) saturate(0%) hue-rotate(139deg) brightness(103%) contrast(95%)");
-			break;
-		case "green":
-			setThemeData("url('/images/backgrounds/green_sidebar.png')", "url('/images/backgrounds/green_main.png')", "#bfbfbf", "#dfdfdf", "invert(82%) sepia(0%) saturate(1111%) hue-rotate(213deg) bridhtness(102%) contrast(74%)");
-			break;
-		case "cyan":
-			setThemeData("url('/images/backgrounds/cyan_sidebar.png')", "url('/images/backgrounds/cyan_main.png')", "#bfbfbf", "dfdfdf", "invert(82%) sepia(0%) saturate(1111%) hue-rotate(213deg) bridhtness(102%) contrast(74%)");
-			break;
-		case "light_blue":
-			setThemeData("url('/images/backgrounds/light_blue_sidebar.png')", "url('/images/backgrounds/light_blue_main.png')", "#414141", "#080808", "invert(23%) sepia(5%) saturate(0%) hue-rotate(139deg) brightness(103%) contrast(95%)");
-			break;
-		case "blue":
-			setThemeData("url('/images/backgrounds/blue_sidebar.png')", "url('/images/backgrounds/blue_main.png')", "#bfbfbf", "#dfdfdf", "invert(82%) sepia(0%) saturate(1111%) hue-rotate(213deg) bridhtness(102%) contrast(74%)");
-			break;
-		case "purple":
-			setThemeData("url('/images/backgrounds/purple_sidebar.png')", "url('/images/backgrounds/purple_main.png')", "#bfbfbf", "#dfdfdf", "invert(82%) sepia(0%) saturate(1111%) hue-rotate(213deg) bridhtness(102%) contrast(74%)");
-			break;
-		case "magenta":
-			setThemeData("url('/images/backgrounds/magenta_sidebar.png')", "url('/images/backgrounds/magenta_main.png')", "#bfbfbf", "#dfdfdf", "invert(82%) sepia(0%) saturate(1111%) hue-rotate(213deg) bridhtness(102%) contrast(74%)");
-			break;
-		case "pink":
-			setThemeData("url('/images/backgrounds/pink_sidebar.png')", "url('/images/backgrounds/pink_main.png')", "#414141", "#080808", "invert(23%) sepia(5%) saturate(0%) hue-rotate(139deg) brightness(103%) contrast(95%)");
-			break;
-		default:
-			// Do Nothing
-			break;
+	try {
+		setThemeData(
+			Themes[theme].sidebar,
+			Themes[theme].body,
+			Themes[theme].iconColor,
+			Themes[theme].linkColor,
+			Themes[theme].linkHover,
+			Themes[theme].backingColor
+		);
+	} catch {
+		setThemeData(
+			Themes.white.sidebar,
+			Themes.white.body,
+			Themes.white.iconColor,
+			Themes.white.linkColor,
+			Themes.white.linkHover,
+			Themes.white.backingColor
+		);
 	}
 }
 
-function setThemeData(sidebar, main, color, colorHover, filter) {
+function setThemeData(sidebar, main, color, colorHover, filter, backingColor) {
 	$(".sidebar").css("background-image", sidebar);
 	$("body").css("background-image", main);
 	$("body").css("color", color);
@@ -113,5 +103,64 @@ function setThemeData(sidebar, main, color, colorHover, filter) {
 	}, function() {
 		$(this).css("color", color);
 	});
+	$(".hr").css("border-color", color);
 	//$(".sidebar a:hover").css("color", colorHover);
+	$(".theme-background").css("background", backingColor);
+}
+
+setTimeout(function() {
+	var path = 0;
+	switch(location.pathname) {
+		case "/":
+			path = 0;
+			showSidebar = false;
+			toggleDisplay("sidebar");
+			break;
+		case "/settings/":
+			path = 1;
+			break;
+		case "/minecraft/":
+			path = 4;
+			break;
+		case "/stars/":
+			path = 6;
+			break;
+	};
+	$("#sidebar").children("a")[path].href = "#/";
+}, 100);
+
+function shouldShowSidebar() {
+	if (showSidebar) {
+		$("#sidebar").css("display", "block");
+		$("#main").addClass("margin85");
+	} else {
+		$("#sidebar").css("display", "none");
+		$("#main").removeClass("margin85");
+	}
+}
+
+setInterval(function() {
+	shouldShowSidebar();
+}, 100);
+
+/**
+ * Pass a string to convert all words to be capitalized.
+ * @param {*} string The string to be converted
+ * @param {*} bool Should spaces be included
+ */
+function strToUpperCase(string, bool) {
+	words = string.split(" ");
+	var ret;
+
+	if(bool) {
+		ret = words.map((word) => {
+			return word[0].toUpperCase() + word.substring(1);
+		}).join(" ");
+	} else {
+		ret = words.map((word) => {
+			return word[0].toUpperCase() + word.substring(1);
+		}).join("");
+	}
+
+	return ret;
 }

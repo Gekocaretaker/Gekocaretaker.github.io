@@ -1,10 +1,49 @@
 
+.mainframe {
+    border-width: 1px;
+    border-color: #818181;
+    border-style: inset;
+    width: 75%;
+    margin: auto;
+    background-color: rgba(129, 129, 129, 0.8);
+    color: black;
+}
+
+.mainframe h2 {
+    padding-left: 5%;
+    text-align: left;
+}
+
 .addon {
-    border-width: 2;
+    border-width: 2px;
     border-color: #818181;
     border-style: ridge;
     text-align: center;
     width: 50%;
     margin: auto;
-    background-color: rgba(129, 129, 129, 0.0625);
+    background-color: rgb(67, 44, 27);
+    color: lightgray;
+}
+
+.creation {
+    /*border-width: 2px;
+    border-color: #818181;
+    border-style: groove;*/
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    background-color: gray;
+    color: lightgray;
+}
+
+.link {
+    color: lightgray;
+}
+
+.link:hover {
+    color: lightgray;
+}
+
+.link:visited {
+    color: lightgray;
 }

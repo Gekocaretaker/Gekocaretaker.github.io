@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Gekocaretaker's Homepage</title>
+	<title>Gekocaretaker's Site</title>
 	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+	<link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="/style.css" />
-	<meta content="Gekocaretaker's Homepage" property="og:title" />
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			width: 100vw;
+			height: 100vh;
+			overflow: hidden;
+		}
+
+		#main {
+			height: 100%;
+			width: 100%;
+		}
+	</style>
+	<meta content="Gekocaretaker's Site" property="og:title" />
 	<meta content="Gekocaretaker's website with a bunch of random stuff." property="og:description" />
 	<meta content="https://gekocaretaker.github.io" property="og:url" />
 	<meta content="https://gekocaretaker.github.io/images/icon.png" property="og:image" />
@@ -12,59 +29,57 @@
 	<meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
-	<div id="sidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
-		<a href="#">
-			<span>
-				<div class="material-icons"><img src="/images/icon.png" /></div>
-				<span class="icon-text">Home</span>
-			</span>
-		</a>
-		<a href="/settings/">
-			<span>
-				<div class="material-icons"><img class="custom-icon-color" src="/images/cog.png" /></div>
-				<span class="icon-text">Settings</span>
-			</span>
-		</a>
-		<a>
-			<div class="material-icons" style="text-align: center;">&#8744;</div>
-			<span class="icon-text">Games</span>
-		</a>
-		<a href="/chemistry/">
-			<span>
-				<div class="material-icons"><img src="/images/chemistry.png" /></div>
-				<span class="icon-text">Chemistry</span>
-			</span>
-		</a>
-		<a href="/government/">
-			<span>
-				<div class="material-icons"><img src="/images/HugePowerFragment.png" /></div>
-				<span class="icon-text-small">Idle Government</span>
-			</span>
-		</a>
-		<a href="/minecraft/">
-			<span>
-				<div class="material-icons"><img src="/images/minecraft.png" /></div>
-				<span class="icon-text-small">Minecraft Stuff</span>
-			</span>
-		</a>
-	</div>
-	<div id="main">
-	<h1 style="text-align: center;">Gekocaretaker's Homepage</h1>
-	<div class="faded-background">
-		<p>This is where I am keeping projects, games, and images I want to host.</p>
-		<p>Todo:</p>
-		<ul style="list-style: none;">
-			<li>Remake Chemistry Game</li>
-			<li>Bring over the constellation editor from my replit site</li>
-			<li>Publish the Wood Type preset for bridge. v2</li>
-		</ul>
-		<p>I am planning on making more youtube videos, as soon as I find the courage to do so.</p>
-	</div>
+	<div include-html="/templates/sidebar.html"></div>
+	<div id="main" class="centered-div" style="padding: initial; margin: 0; transition: 0s;">
+		<h1>Gekocaretaker's Site</h1>
+		<h3>She/Her/Hers</h3>
+		<p class="text-50">Geko is a young trans woman who loves learning. Her hobbies include programming and video games. She has a youtube channel, but is currntly not posting due to college. Geko is part of a MC SMP called Afterlands.</p>
+		<hr class="hr" />
+		<table class="main-links-table">
+			<tr>
+				<th>
+					<h2 class="remove-margins" title="You are here">Home</h2>
+				</th>
+				<th>
+					<h2 class="remove-margins" title="Site preferences">Settings</h2>
+				</th>
+				<th>
+					<h2 class="remove-margins">Minecraft</h2>
+				</th>
+			</tr>
+			<tr>
+				<td>You are here</td>
+				<td>Site Preferences</td>
+				<td>Things for the game Minecraft</td>
+			</tr>
+			<tr>
+				<td class="main-links">
+					<a href="/">
+						<img src="/images/icon.png" />
+					</a>
+				</td>
+				<td class="main-links">
+					<a href="/settings/">
+						<img src="/images/cog.png" />
+					</a>
+				</td>
+				<td class="main-links">
+					<a href="/minecraft/">
+						<img src="/images/minecraft.png" />
+					</a>
+				</td>
+			</tr>
+			
+		</table>
 	</div>
 	<script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
 	<script type="text/javascript" src="/index.js"></script>
+	<script type="text/javascript" src="/templates/includeHtml.js"></script>
+	<script>
+		includeHTML();
+	</script>
 </body>
 </html>

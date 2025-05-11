@@ -66,21 +66,110 @@ main .sidebar {
 }
 
 .faded-background {
-	background-color: #dfdfdf40;
+	background-color: #91919150;
 	text-align: center;
 	margin: auto;
 	width: 75%;
 }
 
+.plain-href {
+	text-decoration: none;
+	color: black;
+}
+
+.plain-href:visited {
+	color: black;
+}
+
+.centered-background-w-image {
+	text-align: center;
+	margin: auto;
+	width: 75%;
+	background-image: var(--custom_image);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.centered-div {
+	text-align: center;
+	margin: auto;
+	width: 90%;
+}
+
+.remove-margins {
+	margin: 0px;
+}
+
+.text-50 {
+	width: 50%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.main-links-table {
+	display:block;
+	width:75%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.main-links {
+	height: 10%;
+	width: 20%;
+}
+
+.main-links a {
+	display: block;
+	margin: auto;
+	max-width: 50%;
+	height: 100%;
+}
+
+.main-links a img {
+	width: 100%;
+	height: 100%;
+}
+
+.hr {
+	border-style:groove;
+	width:75%;
+}
+
 #main {
 	padding: 16px;
+}
+
+.margin85 {
 	margin-left: 85px;
 	transition: margin-left 0.5s;
+}
+
+@keyframes restore {
+	from { opacity: 0; }
+	to { transform: translateY(0px); opacity: 1; }
+}
+
+.restore {
+	animation: restore 200ms;
+	opacity: 1;
+}
+
+@keyframes slideaway {
+	from { opacity: 1; }
+	to { transform: translateY(40px); opacity: 0; }
+}
+
+.minimize {
+	animation: slideaway 200ms;
+	opacity: 0;
 }
 
 body {
 	background-image: url("/images/backgrounds/white_main.png");
 	background-repeat: repeat;
+	position: relative;
+	margin: 0;
 }
 
 @media screen and (max-height: 450px) {
@@ -90,5 +179,9 @@ body {
 	
 	.sidebar a {
 		font-size: 18px;
+	}
+
+	.taskbar {
+		min-width: 75%;
 	}
 }
