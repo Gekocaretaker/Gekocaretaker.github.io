@@ -9,9 +9,36 @@
     color: black;
 }
 
-.mainframe h2 {
+.collapseHeader {
+    width: 100%;
+}
+
+.collapseHeader h2 {
     padding-left: 5%;
     text-align: left;
+    cursor: pointer;
+}
+
+.collapsingContent {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+}
+
+.discEditorContainer {
+    text-align: left;
+    padding-left: 5%;
+    padding-right: 10px;
+}
+
+.collapseHeader h2::before {
+    content: "˃";
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+.collapsingActive h2::before {
+    content: "˅";
 }
 
 .addon {
@@ -26,14 +53,21 @@
 }
 
 .creation {
-    /*border-width: 2px;
-    border-color: #818181;
-    border-style: groove;*/
     text-align: center;
     width: 50%;
     margin: auto;
     background-color: gray;
     color: lightgray;
+}
+
+.centeredUl {
+    display: inline-block;
+    margin-top: 0px;
+    text-align: left;
+}
+
+.addSomePadding {
+    padding-bottom: 10px;
 }
 
 .link {
@@ -46,4 +80,82 @@
 
 .link:visited {
     color: lightgray;
+}
+
+.hoverHint {
+    position: relative;
+    border-bottom: 1px dotted black;
+    cursor: help;
+}
+
+.hoverHint::before {
+    content: attr(data-hover-hint);
+    visibility: hidden;
+    opacity: 0;
+    background-color: lightblue;
+    color: black;
+    text-align: center;
+    width: max-content;
+    border-radius: 5px;
+    padding: 5px;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 110%;
+    z-index: 1000;
+}
+
+.hoverHint:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* These are for the music disc texture editor */
+.discSliderHolder {
+    min-height: 310px;
+}
+
+.IroColorPicker > *:nth-child(3n) {
+    margin-right: 20px;
+}
+
+.discBottomButton {
+    left: 10px;
+}
+
+.hideCanvas {
+    display: none;
+}
+
+#discImage {
+    margin-top: 10px;
+    width: 300px;
+    height: 300px;
+    image-rendering: pixelated;
+}
+
+#discImageHolder {
+    max-width: 50%;
+    width: 50%;
+    min-height: 310px;
+}
+
+a.discDownloadLink, a.discDownloadLink:visited {
+    background-color: cornflowerblue;
+    padding: 1px 4px;
+    text-decoration: none;
+    border-radius: 2px;
+    border-width: 1.6px;
+    text-align: center;
+    color: black;
+    margin-bottom: 4px;
+}
+
+a.discDownloadLink:hover {
+    background-color: #d9d9d9;
+}
+
+.discLessenBottomMargins {
+    margin-bottom: 4px;
 }

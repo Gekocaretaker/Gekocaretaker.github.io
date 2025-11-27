@@ -9,6 +9,21 @@
     <body>
         <div include-html="/templates/sidebar.html"></div>
         <div id="main" style="text-align: center;">
+            <!--
+                Badge colors:
+                Fabric - D64541
+                Forge - 1976D2
+
+                1.19.x - A4120E
+                1.20.x - D193B4
+                1.21 & .1 - F97610
+                1.21.2 & .3 - D2770A
+                1.21.4 - D8D4CF
+                1.21.5 - E7E32C
+                1.21.6 & .7 & .8 - E5E5E5
+                1.21.9 & .10 - B4684D
+            -->
+
             <!--Don't really have bedrock content anymore-->
             <!--<div class="mainframe">
                 <h2>Bedrock Addons</h2>
@@ -22,90 +37,220 @@
                 </div>
             </div>-->
             <div class="mainframe">
-                <h2>Java Mods</h2>
-                <div class="creation">
-                    <h3 id="mc-project-cyanstone"><a class="link" href="https://github.com/Gekocaretaker/Cyanstone">Cyanstone</a></h3>
-                    <p>
-                        <img alt="Fabric" src="https://img.shields.io/badge/Fabric-D64541" />
-                        <img alt="1.20" src="https://img.shields.io/badge/1.20-D193B4" />
-                        <img alt="1.21" src="https://img.shields.io/badge/1.21-F97610" />
-                    </p>
-                    <a href="https://modrinth.com/mod/cyanstone"><img src="https://img.shields.io/modrinth/dt/cyanstone?logo=modrinth&lapel=&suffix=%20&style=flat&color=242629&labelColor=5ca424&logoColor=1c1c1c" alt="Modrinth" /></a>
-                    <br />
-                    <img src="images/cyanstone-logo.png" width="256px" height="256px" />
-                    <p>
-                        Cyanstone is a mod that adds the ability to change the color of redstone and redstone blocks using a colormap in resource packs.
-                    </p>
+                <div class="collapseHeader">
+                    <h2>Java Mods</h2>
                 </div>
-                <div class="creation">
-                    <h3 id="mc-project-gekosmagic"><a class="link" href="https://github.com/Gekocaretaker/GekosMagic">Geko's Magic</a></h3>
-                    <p>
-                        <img alt="Fabric" src="https://img.shields.io/badge/Fabric-D64541" />
-                        <img alt="1.21" src="https://img.shields.io/badge/1.21-F97610" />
-                    </p>
-                    <a href="https://modrinth.com/mod/gekos-magic"><img src="https://img.shields.io/modrinth/dt/gekos-magic?logo=modrinth&lapel=&suffix=%20&style=flat&color=242629&labelColor=5ca424&logoColor=1c1c1c" alt="Modrinth" /></a>
-                    <br />
-                    <img src="images/gekos-magic-logo.png" />
-                    <p>
-                        A magic mod with a new potion-like system, new effects, and geckos.
-                    </p>
-                </div>
-                <div class="creation">
-                    <h3 id="mc-project-roleplayslot"><a class="link" href="https://github.com/Gekocaretaker/RoleplaySlot">Roleplay Slot</a></h3>
-                    <p>
-                        <img alt="Fabric" src="https://img.shields.io/badge/Fabric-D64541" />
-                        <img alt="1.21" src="https://img.shields.io/badge/1.21-F97610" />
-                    </p>
-                    <a href="https://modrinth.com/mod/roleplay-slot"><img src="https://img.shields.io/modrinth/dt/roleplay-slot?logo=modrinth&lapel=&suffix=%20&style=flat&color=242629&labelColor=5ca424&logoColor=1c1c1c" alt="Modrinth" /></a>
-                    <br />
-                    <img src="images/roleplay-slot-logo.png" />
-                    <p>
-                        Allows for the carved pumpkin to be placed in the hat slot. This is rendered like the vanilla head slot, and allows for custom CITs to be used.
-                    </p>
-                </div>
-                <div class="creation">
-                    <h3 id="mc-project-syncore"><a class="link" href="https://github.com/Gekocaretaker/SyncoreFabric">Syncore</a></h3>
-                    <p>
-                        <img alt="Fabric" src="https://img.shields.io/badge/Fabric-D64541" />
-                        <img alt="Forge" src="https://img.shields.io/badge/Forge-1976D2" />
-                        <img alt="1.19" src="https://img.shields.io/badge/1.19-A4120E" /> <!--E34234-->
-                        <img alt="1.20" src="https://img.shields.io/badge/1.20-D193B4" />
-                        <img alt="1.21.5" src="https://img.shields.io/badge/1.21.5-E7E32C" />
-                    </p>
-                    <a href="https://www.curseforge.com/minecraft/mc-mods/syncore"><img src="http://cf.way2muchnoise.eu/867262.svg" alt="CF" /></a>
-                    <a href="https://modrinth.com/mod/syncore"><img src="https://img.shields.io/modrinth/dt/syncore?logo=modrinth&lapel=&suffix=%20&style=flat&color=242629&labelColor=5ca424&logoColor=1c1c1c" alt="Modrinth" /></a>
-                    <br />
-                    <img src="images/syncore-logo.png" width="256px" height="256px" />
-                    <p>
-                        Tries to give all resources missing items and blocks, unless it doesn't make any sense. Some examples are copper nuggets or raw diamonds.
+                <div class="collapsingContent">
+                    <p style="font-style: italic;">Some versions not shown</p>
+                    <div class="creation">
+                        <h3 id="mc-project-cyanstone"><a class="link" href="https://github.com/Gekocaretaker/Cyanstone">Cyanstone</a></h3>
+                        <p>
+                            <img alt="Fabric" src="https://img.shields.io/badge/Fabric-D64541" />
+                            <img alt="1.20" src="https://img.shields.io/badge/1.20-D193B4" />
+                            <img alt="1.21" src="https://img.shields.io/badge/1.21-F97610" />
+                            <img alt="1.21.2" src="https://img.shields.io/badge/1.21.2-D2770A" />
+                            <img alt="1.21.4" src="https://img.shields.io/badge/1.21.4-D8D4CF" />
+                            <img alt="1.21.5" src="https://img.shields.io/badge/1.21.5-E7E32C" />
+                            <br />
+                            <img alt="1.21.6" src="https://img.shields.io/badge/1.21.6-E5E5E5" />
+                            <img alt="1.21.9" src="https://img.shields.io/badge/1.21.9-B4684D" />
+                        </p>
+                        <a href="https://modrinth.com/mod/cyanstone"><img src="https://img.shields.io/modrinth/dt/cyanstone?logo=modrinth&lapel=&suffix=%20&style=flat&color=242629&labelColor=5ca424&logoColor=1c1c1c" alt="Modrinth" /></a>
                         <br />
-                        This mod is more meant to be used by other mods as a dependency, but you can use it standalone if you want.
-                    </p>
+                        <img src="images/cyanstone-logo.png" width="256px" height="256px" />
+                        <p>
+                            Cyanstone is a mod that adds the ability to change the color of redstone and redstone blocks using a colormap in resource packs.
+                        </p>
+                    </div>
+                    <div class="creation">
+                        <h3 id="mc-project-gekosmagic"><a class="link" href="https://github.com/Gekocaretaker/GekosMagic">Geko's Magic</a></h3>
+                        <p>
+                            <img alt="Fabric" src="https://img.shields.io/badge/Fabric-D64541" />
+                            <img alt="1.21" src="https://img.shields.io/badge/1.21-F97610" />
+                            <img alt="1.21.3" src="https://img.shields.io/badge/1.21.3-D2770A" />
+                        </p>
+                        <a href="https://modrinth.com/mod/gekos-magic"><img src="https://img.shields.io/modrinth/dt/gekos-magic?logo=modrinth&lapel=&suffix=%20&style=flat&color=242629&labelColor=5ca424&logoColor=1c1c1c" alt="Modrinth" /></a>
+                        <br />
+                        <img src="images/gekos-magic-logo.png" />
+                        <p>
+                            A magic mod with a new potion-like system, new effects, and geckos.
+                        </p>
+                    </div>
+                    <div class="creation">
+                        <h3 id="mc-project-roleplayslot"><a class="link" href="https://github.com/Gekocaretaker/RoleplaySlot">Roleplay Slot</a></h3>
+                        <p>
+                            <img alt="Fabric" src="https://img.shields.io/badge/Fabric-D64541" />
+                            <img alt="1.21" src="https://img.shields.io/badge/1.21-F97610" />
+                        </p>
+                        <a href="https://modrinth.com/mod/roleplay-slot"><img src="https://img.shields.io/modrinth/dt/roleplay-slot?logo=modrinth&lapel=&suffix=%20&style=flat&color=242629&labelColor=5ca424&logoColor=1c1c1c" alt="Modrinth" /></a>
+                        <br />
+                        <img src="images/roleplay-slot-logo.png" />
+                        <p>
+                            Allows for the carved pumpkin to be placed in the hat slot. This is rendered like the vanilla head slot, and allows for custom CITs to be used.
+                        </p>
+                    </div>
+                    <div class="creation">
+                        <h3 id="mc-project-syncore"><a class="link" href="https://github.com/Gekocaretaker/SyncoreFabric">Syncore</a></h3>
+                        <p>
+                            <img alt="Fabric" src="https://img.shields.io/badge/Fabric-D64541" />
+                            <img alt="Forge" src="https://img.shields.io/badge/Forge-1976D2" />
+                            <img alt="1.19" src="https://img.shields.io/badge/1.19-A4120E" />
+                            <img alt="1.20" src="https://img.shields.io/badge/1.20-D193B4" />
+                            <img alt="1.21.5" src="https://img.shields.io/badge/1.21.5-E7E32C" />
+                        </p>
+                        <a href="https://www.curseforge.com/minecraft/mc-mods/syncore"><img src="http://cf.way2muchnoise.eu/867262.svg" alt="CF" /></a>
+                        <a href="https://modrinth.com/mod/syncore"><img src="https://img.shields.io/modrinth/dt/syncore?logo=modrinth&lapel=&suffix=%20&style=flat&color=242629&labelColor=5ca424&logoColor=1c1c1c" alt="Modrinth" /></a>
+                        <br />
+                        <img src="images/syncore-logo.png" width="256px" height="256px" />
+                        <p>
+                            Tries to give all resources missing items and blocks, unless it doesn't make any sense. Some examples are copper nuggets or raw diamonds.
+                            <br />
+                            This mod is more meant to be used by other mods as a dependency, but you can use it standalone if you want.
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="mainframe">
-                <h2>Java Resource Packs</h2>
-                <div class="creation">
-                    <h3 id="mc-project-cyanstone-rps"><a class="link" href="https://modrinth.com/collection/XqpNwn0R">Cyanstone Resource Packs</a></h3>
-                    <p>
-                        <img alt="Fabric" src="https://img.shields.io/badge/Fabric-D64541" />
-                        <img alt="1.20" src="https://img.shields.io/badge/1.20-D193B4" />
-                        <img alt="1.21" src="https://img.shields.io/badge/1.21-F97610" />
-                    </p>
-                    <a href="https://modrinth.com/collection/XqpNwn0R"><img src="https://img.shields.io/badge/projects-15-242629?style=flat&logo=modrinth&logoColor=1c1c1c&labelColor=5ca424&color=24629" alt="Modrinth" /></a>
+                <div class="collapseHeader">
+                    <h2>Java Resource Packs</h2>
+                </div>
+                <div class="collapsingContent">
+                    <div class="creation">
+                        <h3 id="mc-project-cyanstone-rps"><a class="link" href="https://modrinth.com/collection/XqpNwn0R">Cyanstone Resource Packs</a></h3>
+                        <p>
+                            <img alt="Fabric" src="https://img.shields.io/badge/Fabric-D64541" />
+                            <img alt="1.20" src="https://img.shields.io/badge/1.20-D193B4" />
+                            <img alt="1.21" src="https://img.shields.io/badge/1.21.x-F97610" />
+                        </p>
+                        <a href="https://modrinth.com/collection/XqpNwn0R"><img src="https://img.shields.io/badge/projects-30-242629?style=flat&logo=modrinth&logoColor=1c1c1c&labelColor=5ca424&color=24629" alt="Modrinth" /></a>
+                        <br />
+                        <p>Resource packs that use the Cyanstone mod to change to color of redstone!</p>
+                        <ul class="centeredUl">
+                            <li>15 Vanilla dye colors</li>
+                            <li>15 Pride themed packs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mainframe">
+                <div class="collapseHeader">
+                    <h2>Music Disc Texture Editor</h2>
+                </div>
+                <div class="collapsingContent discEditorContainer">
+                    <label for="discBase" class="hoverHint" data-hover-hint="The disc itself">Base: </label>
+            		<select id="discBase">
+			            <option data-color-count="2"
+            				data-layer1="layerDiscBottom"
+			            	data-layer2="layerDiscTop">Disc</option>
+            			<option data-color-count="1"
+			            	data-layer1="layerBrokenBottom">Broken Disc</option>
+            			<option data-color-count="2"
+			            	data-layer1="layerEchoBottom"
+            				data-layer2="layerEchoTop">Echo</option>
+			            <option data-color-count="3"
+            				data-layer1="layerGradientBottom"
+			            	data-layer2="layerGradientTop"
+            				data-layer3="layerGradientOverlay">Gradient</option>
+                        <option data-color-count="3"
+                            data-layer1="layerDiscBottom"
+                            data-layer2="layerDiscTop"
+                            data-layer3="layerRingTop">Ring</option>
+			            <option data-color-count="5"
+            				data-layer1="layerStripedBottom"
+			            	data-layer2="layerStripedLeft"
+            				data-layer3="layerStripedRight"
+			            	data-layer4="layerStripedTop"
+                            data-layer5="layerDiscTop">Striped</option>
+            		</select>
+            		<div id="discBaseColors" class="discSliderHolder"></div>
                     <br />
-                    <p>
-                        Resource packs that use the Cyanstone mod to change to color of redstone
-                    </p>
+            		<label for="discPattern" class="hoverHint" data-hover-hint="The overlay pattern that is on the disc">Pattern: </label>
+            		<select id="discPattern">
+            			<option data-color-count="0"
+			            	data-layer1="layerPatternNone">None</option>
+            			<option data-color-count="1"
+			            	data-layer1="layerPatternCenter">Center</option>
+            			<option data-color-count="1"
+			            	data-layer1="layerPatternCracked">Cracked</option>
+            			<option data-color-count="1"
+			            	data-layer1="layerPatternDual">Dual</option>
+            			<option data-color-count="1"
+			            	data-layer1="layerPatternEdges">Edges</option>
+            			<option data-color-count="1"
+			            	data-layer1="layerPatternGilded">Gilded</option>
+            			<option data-color-count="2"
+            				data-layer1="layerPatternGradient1"
+			            	data-layer2="layerPatternGradient2">Gradient</option>
+            			<option data-color-count="1"
+			            	data-layer1="layerPatternSlashed">Slashed</option>
+            			<option data-color-count="1"
+            				data-layer1="layerPatternSpiral">Spiral</option>
+            			<option data-color-count="1"
+            				data-layer1="layerPatternStreaked">Streaked</option>
+            			<option data-color-count="1"
+            				data-layer1="layerPatternStriped">Striped</option>
+            			<option data-color-count="2"
+            				data-layer1="layerPatternEgg1"
+            				data-layer2="layerPatternEgg2">Egg</option>
+            		</select>
+            		<div id="discPatternColors" class="discSliderHolder"></div>
+                    <div id="discImageHolder">
+                        <img id="discImage" src="" />
+                    </div>
+            		<hr class="discLessenBottomMargins" />
+            		<div class="addSomePadding">
+                        <label for="discName" class="hoverHint" data-hover-hint="The name of the disc in snake_case">Disc Name: </label>
+                        <input type="text" id="discName" placeholder="mellohi" />
+                        <label for="discLiveUpdate" class="hoverHint" data-hover-hint="When enabled, the image updates as changes are made">Live Update: </label>
+                		<input type="checkbox" id="discLiveUpdate" />
+                		<button id="discForceUpdate" class="discBottomButton">Update</button>
+                		<a class="discDownloadLink" id="discDownloadImageLink" href="" download="music_disc_mellohi.png">Download Disc</a>
+                    </div>
+                    <!-- These are used for internal stuff -->
+                    <div id="discLayerTextures" style="display: none;">
+			            <img id="layerDiscBottom" src="images/disc/disc_bottom.png" />
+            			<img id="layerDiscTop" src="images/disc/disc_top.png" />
+			            <img id="layerBrokenBottom" src="images/disc/broken_disc_bottom.png" />
+            			<img id="layerEchoBottom" src="images/disc/echo_disc_bottom.png" />
+                        <img id="layerEchoTop" src="images/disc/echo_disc_top.png" />
+                        <img id="layerGradientBottom" src="images/disc/gradient_disc_bottom.png" />
+                        <img id="layerGradientTop" src="images/disc/gradient_disc_overlay.png" />
+                        <img id="layerGradientOverlay" src="images/disc/gradient_disc_top.png" />
+                        <img id="layerRingTop" src="images/disc/ring_top.png" />
+                        <img id="layerStripedBottom" src="images/disc/striped_disc_bottom.png" />
+                        <img id="layerStripedLeft" src="images/disc/striped_disc_left.png" />
+                        <img id="layerStripedRight" src="images/disc/striped_disc_right.png" />
+                        <img id="layerStripedTop" src="images/disc/striped_disc_top.png" />
+			
+                        <img id="layerPatternNone" src="images/disc/pattern/none.png" />
+                        <img id="layerPatternCenter" src="images/disc/pattern/center.png" />
+                        <img id="layerPatternCracked" src="images/disc/pattern/cracked.png" />
+                        <img id="layerPatternDual" src="images/disc/pattern/dual.png" />
+                        <img id="layerPatternEdges" src="images/disc/pattern/edges.png" />
+                        <img id="layerPatternEgg1" src="images/disc/pattern/egg.png" />
+                        <img id="layerPatternEgg2" src="images/disc/pattern/egg2.png" />
+                        <img id="layerPatternGilded" src="images/disc/pattern/gilded.png" />
+                        <img id="layerPatternGradient1" src="images/disc/pattern/gradient.png" />
+                        <img id="layerPatternGradient2" src="images/disc/pattern/gradient2.png" />
+                        <img id="layerPatternSlashed" src="images/disc/pattern/slashed.png" />
+                        <img id="layerPatternSpiral" src="images/disc/pattern/spiral.png" />
+                        <img id="layerPatternStreaked" src="images/disc/pattern/streaked.png" />
+                        <img id="layerPatternStriped" src="images/disc/pattern/striped.png" />
+            		</div>
+            		<canvas id="discCanvas" class="hideCanvas" width="16px" height="16px"></canvas>
+            		<canvas id="discColorizeCanvas" class="hideCanvas" width="16px" height="16px"></canvas>
+            		<br />
                 </div>
             </div>
             <br /><br />
         </div>
         <script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
 	<script type="text/javascript" src="/index.js"></script>
+    <script type="text/javascript" src="mc-script.js"></script>
 	<script type="text/javascript" src="/templates/includeHtml.js"></script>
 	<script>
 		includeHTML();

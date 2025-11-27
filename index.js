@@ -104,7 +104,6 @@ function setThemeData(sidebar, main, color, colorHover, filter, backingColor) {
 		$(this).css("color", color);
 	});
 	$(".hr").css("border-color", color);
-	//$(".sidebar a:hover").css("color", colorHover);
 	$(".theme-background").css("background", backingColor);
 }
 
@@ -120,13 +119,9 @@ setTimeout(function() {
 			path = 1;
 			break;
 		case "/minecraft/":
-			path = 4;
-			break;
-		case "/stars/":
-			path = 6;
+			path = 3;
 			break;
 	};
-	$("#sidebar").children("a")[path].href = "#/";
 }, 100);
 
 function shouldShowSidebar() {
